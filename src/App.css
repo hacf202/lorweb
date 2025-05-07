@@ -1,0 +1,810 @@
+/* CSS-variabler för att hantera färger och storlekar */
+:root {
+	--primary-bg: rgba(0, 0, 0, 0.527);
+	--secondary-bg: rgba(78, 74, 74, 0.616);
+	--hover-bg: rgba(0, 0, 0, 0);
+	--border-color: rgba(255, 255, 255, 0.2);
+	--text-color: #fff;
+	--slot-size: 80px;
+	--delete-btn-size: 15px;
+	--panel-width: 400px;
+	/* Màu sắc cho các nút */
+	--relic-btn-bg: #4a90e2;
+	--power-btn-bg: #e74c3c;
+	--item-btn-bg: #2ecc71;
+	--champion-btn-bg: #f1c40f;
+	--save-btn-bg: #9b59b6;
+	--btn-hover-opacity: 0.8;
+	--btn-active-scale: 0.95;
+}
+
+/* Behållare för kort */
+#container {
+	position: relative;
+	display: flex;
+	width: 150px;
+	height: 200px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Hover-effekt för kort */
+#container::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.15);
+	z-index: 2;
+}
+
+#container:hover::before {
+	background-color: var(--hover-bg);
+}
+
+#container:hover {
+	cursor: pointer;
+}
+
+/* Bild trên kortet */
+#picChampions {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 1;
+}
+
+/* Ikon för region */
+#region {
+	position: absolute;
+	z-index: 2;
+	display: inline-flex;
+	top: 5px;
+	left: 5px;
+}
+
+.icon {
+	width: 30px;
+	background-color: rgba(85, 85, 80, 0.507);
+	border-radius: 10px;
+	padding: 5px;
+	object-fit: cover;
+}
+
+/* Titel trên kortet */
+#title {
+	z-index: 3;
+	color: var(--text-color);
+	font-size: 20px;
+	position: absolute;
+	bottom: 20px;
+	background-color: rgba(26, 24, 24, 0.623);
+	padding: 10px;
+	width: 88%;
+}
+
+/* Huvudvisningsområde */
+#mainView {
+	margin: 20px;
+	height: 880px;
+	display: flex;
+	border-radius: 10px;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
+}
+
+#picChamp {
+	position: absolute;
+	z-index: 2;
+	width: 300px;
+	left: 20px;
+	top: 70px;
+}
+
+#selectChamp {
+	position: absolute;
+	z-index: 1;
+	filter: brightness(0.75);
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Uppsättningar av reliker, krafter, föremål, standardkrafter och anteckningar */
+#relic-sets,
+#power-set,
+#item-set,
+#default-powers,
+#note-set,
+#comment-set {
+	position: absolute;
+	z-index: 30;
+	color: var(--text-color);
+	text-align: center;
+	background-color: var(--primary-bg);
+	border-radius: 20px;
+	border: 1px solid var(--border-color);
+	padding: 10px;
+	display: flex;
+	gap: 10px;
+}
+
+#relic-sets {
+	top: 80px;
+	left: 340px;
+	max-width: 650px;
+	flex-direction: row;
+}
+
+#power-set {
+	top: 80px;
+	left: 1020px;
+	max-width: 320px;
+}
+
+#item-set {
+	top: 465px;
+	left: 1020px;
+	max-width: 320px;
+}
+
+#default-powers {
+	top: 465px;
+	left: 340px;
+	width: 645px;
+}
+
+#note-set {
+	top: 630px;
+	left: 340px;
+}
+
+#comment-set {
+	top: 465px;
+	right: 20px;
+	width: 400px;
+}
+
+.relic-set,
+.power-set,
+.item-set,
+.default-power-set,
+.note-set,
+.comment-set {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	min-width: 100px;
+	background-color: var(--secondary-bg);
+	border-radius: 5px;
+}
+
+.default-power-set,
+.note-set {
+	width: 645px;
+}
+
+.relic-set {
+	width: calc(33.33% - 10px);
+}
+
+.relic-set h2,
+.power-set h2,
+.item-set h2,
+.default-power-set h2,
+.note-set h2,
+.comment-set h2 {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.relic-slots,
+.power-slots,
+.item-slots,
+.default-power-slots {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	justify-content: center;
+}
+
+.default-power-slots {
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	white-space: nowrap;
+	scroll-behavior: smooth;
+}
+
+.note-content {
+	display: flex;
+	width: 610px;
+	height: 190px;
+	overflow-y: auto;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.note-textarea {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	color: var(--text-color);
+	font-size: 20px;
+	line-height: 1.5;
+	resize: none;
+	padding: 0;
+	outline: none;
+}
+
+.note-textarea::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.comment-content {
+	max-height: 150px;
+	overflow-y: auto;
+	padding: 10px;
+	width: 610px;
+}
+
+.comment-item {
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.comment-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px;
+	width: 380px;
+}
+
+.comment-input {
+	padding: 8px;
+	background-color: transparent;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	color: var(--text-color);
+	font-size: 16px;
+	outline: none;
+}
+
+.comment-textarea {
+	padding: 8px;
+	background-color: transparent;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	color: var(--text-color);
+	font-size: 16px;
+	resize: none;
+	height: 55px;
+	outline: none;
+}
+
+.comment-textarea::placeholder,
+.comment-input::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.comment-submit-btn {
+	padding: 10px;
+	background-color: var(--save-btn-bg);
+	color: var(--text-color);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.comment-submit-btn:hover {
+	opacity: var(--btn-hover-opacity);
+}
+
+.comment-submit-btn:active {
+	transform: scale(var(--btn-active-scale));
+}
+
+.relic-slot,
+.power-slot,
+.item-slot,
+.default-power {
+	width: var(--slot-size);
+	height: var(--slot-size);
+	border: 2px dashed #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	margin: 9px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.relic-slot.filled,
+.power-slot.filled,
+.item-slot.filled,
+.default-power.filled {
+	border: none;
+	padding: 2px;
+}
+
+.relic-slot:hover,
+.power-slot:hover,
+.item-slot:hover,
+.default-power:hover {
+	border-color: var(--text-color);
+}
+
+.relic-slot.filled:hover,
+.power-slot.filled:hover,
+.item-slot.filled:hover,
+.default-power.filled:hover {
+	border: none;
+}
+
+.relic-slot p,
+.power-slot p,
+.item-slot p,
+.default-power p {
+	font-size: 50px;
+	color: #faf8f8;
+	font-weight: bold;
+}
+
+.relic-slot-content,
+.power-slot-content,
+.item-slot-content,
+.default-power-content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 35;
+}
+
+.iconRelic,
+.iconPower,
+.iconItem {
+	width: var(--slot-size);
+	height: var(--slot-size);
+	object-fit: contain;
+	z-index: 5;
+}
+
+.delete-relic-btn,
+.delete-power-btn,
+.delete-item-btn,
+.delete-default-power-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: var(--delete-btn-size);
+	height: var(--delete-btn-size);
+	background-color: #ff4444;
+	color: var(--text-color);
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	cursor: pointer;
+	z-index: 40;
+}
+
+.delete-relic-btn:hover,
+.delete-power-btn:hover,
+.delete-item-btn:hover,
+.delete-default-power-btn:hover {
+	background-color: #cc3333;
+}
+
+/* Nút Like cho bộ cổ vật */
+.like-relic-btn {
+	padding: 5px 10px;
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	top: -60px;
+	background-color: #d6220acc;
+	color: var(--text-color);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+
+.like-relic-btn:hover {
+	background-color: #f78677cc;
+}
+
+.like-relic-btn:disabled {
+	background-color: #3f4546;
+	cursor: not-allowed;
+}
+
+/* Tooltip för att visa fullständig bild */
+.relic-slot-content:hover .tooltip,
+.power-slot-content:hover .tooltip,
+.item-slot-content:hover .tooltip,
+.default-power-content:hover .tooltip {
+	visibility: visible;
+	opacity: 1;
+}
+
+.tooltip {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	top: 550px;
+	left: 25px;
+	width: 330px;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.788);
+	border-radius: 10px;
+	z-index: 1000;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+.tooltip img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: 10px;
+}
+
+/* Lista över reliker, krafter, föremål och champions */
+.relic-list,
+.power-list,
+.item-list,
+.champion-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	max-height: 790px;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+.item-list-item {
+	width: var(--slot-size);
+	height: var(--slot-size);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.champion-list-item {
+	width: 150px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.draggable {
+	cursor: grab;
+}
+
+.draggable:active {
+	cursor: grabbing;
+}
+
+/* Knappar för att öppna paneler và lưu trạng thái */
+.open-relic-panel,
+.open-power-panel,
+.open-item-panel,
+.open-champion-panel,
+.save-defaults-btn {
+	position: absolute;
+	right: 60px;
+	width: 320px;
+	padding: 12px 24px;
+	color: var(--text-color);
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	z-index: 25;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Màu sắc riêng cho từng nút */
+.open-relic-panel {
+	top: 100px;
+	background-color: var(--relic-btn-bg);
+}
+
+.open-power-panel {
+	top: 160px;
+	background-color: var(--power-btn-bg);
+}
+
+.open-item-panel {
+	top: 220px;
+	background-color: var(--item-btn-bg);
+}
+
+.open-champion-panel {
+	top: 280px;
+	background-color: var(--champion-btn-bg);
+}
+
+.save-defaults-btn {
+	top: 340px;
+	background-color: var(--save-btn-bg);
+}
+
+/* Hiệu ứng hover */
+.open-relic-panel:hover,
+.open-power-panel:hover,
+.open-item-panel:hover,
+.open-champion-panel:hover,
+.save-defaults-btn:hover {
+	opacity: var(--btn-hover-opacity);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hiệu ứng khi nhấn */
+.open-relic-panel:active,
+.open-power-panel:active,
+.open-item-panel:active,
+.open-champion-panel:active,
+.save-defaults-btn:active {
+	transform: scale(var(--btn-active-scale));
+}
+
+/* Paneler för reliker, krafter, föremål och champions */
+.relic-panel,
+.power-panel,
+.item-panel,
+.champion-panel {
+	position: fixed;
+	top: 20px;
+	right: calc(-1 * var(--panel-width));
+	width: var(--panel-width);
+	height: 95%;
+	background-color: #222222b6;
+	z-index: 50;
+	transition: right 0.3s ease-in-out;
+	border-radius: 21px;
+}
+
+.relic-panel.open,
+.power-panel.open,
+.item-panel.open,
+.champion-panel.open {
+	right: 20px;
+}
+
+.relic-panel-content,
+.power-panel-content,
+.item-panel-content,
+.champion-panel-content {
+	padding: 20px;
+	position: relative;
+}
+
+.relic-panel-content h3,
+.power-panel-content h3,
+.item-panel-content h3,
+.champion-panel-content h3 {
+	color: var(--text-color);
+	margin-bottom: 10px;
+}
+
+.close-relic-panel,
+.close-power-panel,
+.close-item-panel,
+.close-champion-panel {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 5px 10px;
+	background-color: #ff4444;
+	color: var(--text-color);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.close-relic-panel:hover,
+.close-power-panel:hover,
+.close-item-panel:hover,
+.close-champion-panel:hover {
+	background-color: #cc3333;
+}
+.CanhBao {
+	z-index: 50;
+	font-size: 27px;
+	position: absolute;
+	color: #ffffff;
+	top: 50px;
+	right: 50px;
+	background-color: #141313b6;
+	padding: 5px;
+}
+/* Responsiv design för mobila enheter */
+@media (max-width: 768px) {
+	#relic-sets {
+		top: 100px;
+		left: 20px;
+		max-width: 90%;
+		flex-direction: column;
+	}
+
+	#power-set {
+		top: 600px;
+		left: 20px;
+		max-width: 90%;
+	}
+
+	#item-set {
+		top: 800px;
+		left: 20px;
+		max-width: 90%;
+	}
+
+	#default-powers {
+		top: 1000px;
+		left: 20px;
+		min-width: unset;
+		max-width: 90%;
+	}
+
+	#note-set {
+		top: 1180px;
+		left: 20px;
+		min-width: unset;
+		max-width: 90%;
+	}
+
+	#comment-set {
+		top: 1360px;
+		left: 20px;
+		min-width: unset;
+		max-width: 90%;
+	}
+
+	#picChamp {
+		width: 200px;
+	}
+
+	#mainView {
+		height: auto;
+		flex-direction: column;
+	}
+
+	.power-slots,
+	.item-slots,
+	.default-power-slots {
+		justify-content: flex-start;
+	}
+
+	.default-power-slots {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	.note-content {
+		height: 80px;
+	}
+
+	.note-textarea {
+		font-size: 16px;
+	}
+
+	.comment-content {
+		height: 100px;
+	}
+
+	.comment-textarea {
+		height: 60px;
+		font-size: 14px;
+	}
+
+	.comment-input {
+		font-size: 14px;
+	}
+
+	.comment-item {
+		font-size: 14px;
+	}
+
+	.comment-form {
+		width: 100%;
+	}
+
+	.comment-set,
+	.default-power-set,
+	.note-set {
+		width: 100%;
+	}
+
+	.tooltip {
+		width: 100px;
+		height: 100px;
+		top: 50px;
+		left: 20px;
+		z-index: 1000;
+	}
+
+	.open-relic-panel,
+	.open-power-panel,
+	.open-item-panel,
+	.open-champion-panel,
+	.save-defaults-btn {
+		right: 10px;
+		padding: 10px 15px;
+		font-size: 14px;
+		border-radius: 6px;
+	}
+
+	.open-relic-panel {
+		top: 10px;
+	}
+
+	.open-power-panel {
+		top: 60px;
+	}
+
+	.open-item-panel {
+		top: 110px;
+	}
+
+	.open-champion-panel {
+		top: 160px;
+	}
+
+	.save-defaults-btn {
+		top: 210px;
+	}
+
+	.relic-panel,
+	.power-panel,
+	.item-panel,
+	.champion-panel {
+		width: 80%;
+	}
+
+	.item-list-item {
+		width: calc(var(--slot-size) * 1);
+		height: calc(var(--slot-size) * 1);
+	}
+
+	.champion-list-item {
+		width: 120px;
+		height: 160px;
+	}
+
+	.relic-set {
+		width: 100%;
+	}
+
+	.like-relic-btn {
+		padding: 4px 8px;
+		font-size: 14px;
+	}
+}

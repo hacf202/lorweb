@@ -1,0 +1,1652 @@
+[
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98NX003.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98NX003T1-full.png"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Ambessa",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98RU004.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98RU004-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Fiddlesticks",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98PZ001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98PZ001-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Warwick",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			"Chết Chóc",
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [
+			"Găng Tay Băng Giá",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09BC001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09BC001-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Quần Đảo Bóng Đêm"],
+		"regionRefs": ["BandleCity", "ShadowIsles"],
+		"name": "Vex",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09DE034.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09DE034-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Lux: rạng ngời",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09IO052.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09IO052-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Lillia",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08BW008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08BW008-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Nilah",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08FR001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08FR001-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Volibear",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08MT003.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08MT003-full.png"
+			}
+		],
+		"regions": ["Targon", "Demacia"],
+		"regionRefs": ["Targon", "Demacia"],
+		"name": "Morgana",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08PZ001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08PZ001-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Janna",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08RU014.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08RU014-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Rồng Ngàn Tuổi",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08SI042.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08SI042-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm", "Noxus"],
+		"regionRefs": ["ShadowIsles", "Noxus"],
+		"name": "Mordekaiser",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU012.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU012-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Neeko",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU015.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU015-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Vua Poro",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07SH013.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07SH013-full.png"
+			}
+		],
+		"regions": ["Shurima"],
+		"regionRefs": ["Shurima"],
+		"name": "Nidalee",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06BC015.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06BC015-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle"],
+		"regionRefs": ["BandleCity"],
+		"name": "Norra",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06DE021.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06DE021-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Vayne",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06FR011.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06FR011-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Ornn",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06IO008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06IO008-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Master Yi",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03BW004.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03BW004-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Tahm Kench",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT056.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT056-full.png"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Diana",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT054.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT054-full.png"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Leona",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT087.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT087-full.png"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Aurelion Sol",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03PZ003.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03PZ003-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Viktor",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW022.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW022-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Miss Fortune",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW053.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW053-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Nautilus",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02IO006.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02IO006-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Lee Sin",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02NX007.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02NX007-full.png"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Swain",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02PZ008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02PZ008-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Vi",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE012.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE012-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Garen",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE042.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE042-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Lux",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR038.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR038-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Ashe",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR039.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR039-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Tryndamere",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01IO015.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01IO015-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Yasuo",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01NX038.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01NX038-full.png"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Darius",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ008-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Piltover & Zaun"],
+		"regionRefs": ["BandleCity", "PiltoverZaun"],
+		"name": "Teemo",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ040.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ040-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Jinx",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ056.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ056-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Piltover & Zaun"],
+		"regionRefs": ["BandleCity", "PiltoverZaun"],
+		"name": "Heimerdinger",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI052.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI052-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Thresh",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI053.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI053-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Elise",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	}
+]
