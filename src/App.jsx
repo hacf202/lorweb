@@ -3,11 +3,13 @@ import "./App.css";
 import iconRegionList from "./iconRegions";
 import relicList from "./relics-vi_vn.json";
 import powerList from "./powers-vi_vn.json";
+import adventurePowerList from "./adventure-powers-vi_vn.json";
 import itemList from "./items-vi_vn.json";
 import { useState, useMemo, useCallback, useEffect } from "react";
 import { memo } from "react";
 import axios from "axios";
 
+// Định nghĩa các hằng số cho số lượng slot và loại item
 const SLOT_SIZES = {
 	relic: 3,
 	power: 9,
@@ -21,9 +23,21 @@ const ITEM_TYPES = {
 	ITEM: "item",
 };
 
+// Thứ tự ưu tiên độ hiếm
 const rarityOrder = { Legendary: 1, Epic: 2, Rare: 3, Common: 4, Special: 5 };
 
-// Component for individual champion card
+// Danh sách độ hiếm cho bộ lọc
+const RARITY_FILTERS = [
+	{ value: "all", label: "TẤT CẢ" },
+	{ value: "Common", label: "THƯỜNG" },
+	{ value: "Rare", label: "HIẾM" },
+	{ value: "Epic", label: "SỬ THI" },
+];
+
+// Giá trị mặc định cho lượt thích
+const defaultLikes = { set1: 0, set2: 0, set3: 0, set4: 0, set5: 0, set6: 0 };
+
+// Component hiển thị thẻ tướng riêng lẻ
 const ChampionCard = memo(({ champion, onSelectChampion }) => {
 	const handleClick = () => onSelectChampion(champion);
 
@@ -54,7 +68,7 @@ const ChampionCard = memo(({ champion, onSelectChampion }) => {
 	);
 });
 
-// Component for individual slot (relic, power, item)
+// Component hiển thị slot cho cổ vật, sức mạnh, vật phẩm
 const ItemSlot = memo(
 	({
 		slot,
@@ -65,18 +79,20 @@ const ItemSlot = memo(
 		handleDragStart,
 		handleRemoveItem,
 		getItemImage,
+		openPanel,
 	}) => (
 		<div
 			className={`${type}-slot ${slot ? "filled" : ""}`}
 			onDrop={e => handleDrop(e, slotIndex, setNumber)}
 			onDragOver={e => e.preventDefault()}
+			onClick={() => !slot && openPanel && openPanel(type)}
 		>
 			{slot ? (
 				<div className={`${type}-slot-content`}>
 					<img
 						loading='lazy'
 						className={`icon${type.charAt(0).toUpperCase() + type.slice(1)}`}
-						src={getItemImage(slot).assetAbsolutePath}
+						src={getItemImage(slot, setNumber).assetAbsolutePath}
 						alt={slot.name}
 						draggable
 						onDragStart={e =>
@@ -86,7 +102,7 @@ const ItemSlot = memo(
 					<div className='tooltip'>
 						<img
 							loading='lazy'
-							src={getItemImage(slot).assetFullAbsolutePath}
+							src={getItemImage(slot, setNumber).assetFullAbsolutePath}
 							alt={slot.name}
 						/>
 					</div>
@@ -104,7 +120,7 @@ const ItemSlot = memo(
 	)
 );
 
-// Component for relic set
+// Component hiển thị bộ cổ vật
 const RelicSet = ({
 	setNumber,
 	relicSets,
@@ -115,10 +131,12 @@ const RelicSet = ({
 	handleLike,
 	hasLiked,
 	likes,
+	openPanel,
 }) => (
 	<div className='relic-set'>
+		<h2>Bộ {setNumber}</h2>
 		<h2>
-			Bộ {setNumber} <span>(Lượt thích: {likes[`set${setNumber}`] || 0})</span>
+			<span>🤍 {likes[`set${setNumber}`] || 0}</span>
 		</h2>
 		<div className='relic-slots'>
 			{relicSets[setNumber]?.map((slot, slotIndex) => (
@@ -132,8 +150,9 @@ const RelicSet = ({
 					handleDragStart={handleDragStart}
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
+					openPanel={openPanel}
 				/>
-			)) || null}
+			))}
 		</div>
 		<button
 			className='like-relic-btn'
@@ -145,13 +164,14 @@ const RelicSet = ({
 	</div>
 );
 
-// Component for power set
+// Component hiển thị bộ sức mạnh phiêu lưu
 const PowerSet = ({
 	powerSlots,
 	handleDrop,
 	handleDragStart,
 	handleRemoveItem,
 	getItemImage,
+	openPanel,
 }) => (
 	<div className='power-set'>
 		<h2>Sức Mạnh Phiêu Lưu</h2>
@@ -167,19 +187,21 @@ const PowerSet = ({
 					handleDragStart={handleDragStart}
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
+					openPanel={openPanel}
 				/>
 			))}
 		</div>
 	</div>
 );
 
-// Component for item set
+// Component hiển thị bộ vật phẩm
 const ItemSet = ({
 	itemSlots,
 	handleDrop,
 	handleDragStart,
 	handleRemoveItem,
 	getItemImage,
+	openPanel,
 }) => (
 	<div className='item-set'>
 		<h2>Vật Phẩm</h2>
@@ -195,19 +217,21 @@ const ItemSet = ({
 					handleDragStart={handleDragStart}
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
+					openPanel={openPanel}
 				/>
 			))}
 		</div>
 	</div>
 );
 
-// Component for default powers
+// Component hiển thị bộ chòm sao
 const DefaultPowerSet = ({
 	defaultPowerSlots,
 	handleDrop,
 	handleDragStart,
 	handleRemoveItem,
 	getItemImage,
+	openPanel,
 }) => (
 	<div className='default-power-set'>
 		<h2>Chòm Sao</h2>
@@ -223,13 +247,14 @@ const DefaultPowerSet = ({
 					handleDragStart={handleDragStart}
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
+					openPanel={openPanel}
 				/>
 			))}
 		</div>
 	</div>
 );
 
-// Component for notes
+// Component hiển thị ghi chú
 const NoteSet = ({ notes, selectedChampion, handleNoteChange }) => (
 	<div className='note-set'>
 		<h2>Ghi Chú</h2>
@@ -244,7 +269,7 @@ const NoteSet = ({ notes, selectedChampion, handleNoteChange }) => (
 	</div>
 );
 
-// Component for comments
+// Component hiển thị bình luận
 const CommentSet = ({
 	comments,
 	championName,
@@ -287,12 +312,35 @@ const CommentSet = ({
 	</div>
 );
 
+// Component hiển thị modal xác nhận
+const ConfirmModal = ({ isOpen, onConfirm, onCancel }) => {
+	if (!isOpen) return null;
+
+	return (
+		<div className='modal-overlay'>
+			<div className='modal-content'>
+				<h3>Xác nhận lưu</h3>
+				<p>Bạn có chắc chắn muốn lưu cấu hình này không?</p>
+				<div className='modal-buttons'>
+					<button className='modal-confirm-btn' onClick={onConfirm}>
+						Xác nhận
+					</button>
+					<button className='modal-cancel-btn' onClick={onCancel}>
+						Hủy
+					</button>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+// Hàm tìm link biểu tượng khu vực
 function findRegionIconLink(regionIcon) {
 	const item = iconRegionList.find(item => item.name === regionIcon);
 	return item?.iconAbsolutePath || "default-icon.png";
 }
 
-// Utility function (moved up to avoid ReferenceError)
+// Hàm khởi tạo trạng thái ban đầu cho tướng
 const initializeChampionState = champion => {
 	const initializeSlots = (items, type, maxSlots) =>
 		Array(maxSlots)
@@ -350,6 +398,7 @@ const initializeChampionState = champion => {
 	};
 };
 
+// Hàm lấy danh sách vật phẩm mặc định hợp lệ
 const getValidDefaultItems = champion => {
 	const defaultItems = Array.isArray(champion.defaultItems)
 		? champion.defaultItems
@@ -359,11 +408,9 @@ const getValidDefaultItems = champion => {
 		.slice(0, SLOT_SIZES.item);
 };
 
-// Default likes để đảm bảo luôn có giá trị hợp lệ
-const defaultLikes = { set1: 0, set2: 0, set3: 0, set4: 0, set5: 0, set6: 0 };
-
+// Component chính của ứng dụng
 function App() {
-	// Memoized sorted lists
+	// Sắp xếp danh sách cổ vật, sức mạnh, vật phẩm theo độ hiếm và tên
 	const sortedRelicList = useMemo(
 		() =>
 			[...relicList].sort((a, b) => {
@@ -394,7 +441,19 @@ function App() {
 		[]
 	);
 
-	// Initialize state with fallback from localStorage
+	// Tạo danh sách khu vực từ iconRegionList
+	const regionFilters = useMemo(() => {
+		const regions = [
+			{ value: "all", label: "TẤT CẢ" },
+			...iconRegionList.map(region => ({
+				value: region.name,
+				label: region.name.toUpperCase(),
+			})),
+		];
+		return regions;
+	}, []);
+
+	// Khởi tạo trạng thái từ localStorage
 	const savedState = localStorage.getItem("championConfig");
 	const initialState = savedState ? JSON.parse(savedState) : null;
 
@@ -431,8 +490,17 @@ function App() {
 	const [commentData, setCommentData] = useState([]);
 	const [userName, setUserName] = useState("");
 	const [newComment, setNewComment] = useState("");
+	const [relicSearch, setRelicSearch] = useState("");
+	const [powerSearch, setPowerSearch] = useState("");
+	const [itemSearch, setItemSearch] = useState("");
+	const [championSearch, setChampionSearch] = useState("");
+	const [relicRarityFilter, setRelicRarityFilter] = useState("all");
+	const [powerRarityFilter, setPowerRarityFilter] = useState("all");
+	const [itemRarityFilter, setItemRarityFilter] = useState("all");
+	const [regionFilter, setRegionFilter] = useState("all");
+	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
-	// Load champion data from API and set the first champion on initial load
+	// Tải danh sách tướng từ API khi khởi động
 	useEffect(() => {
 		const loadChampionData = async () => {
 			try {
@@ -444,15 +512,15 @@ function App() {
 					setSelectedChampion(data[0]);
 				}
 			} catch (error) {
-				console.error("Error loading champion list:", error);
+				console.error("Lỗi tải danh sách tướng:", error);
 				alert("Không thể tải danh sách tướng. Vui lòng thử lại sau.");
 			}
 		};
 
 		loadChampionData();
-	});
+	}, []);
 
-	// Load champion details when selectedChampion changes
+	// Tải chi tiết tướng khi thay đổi tướng được chọn
 	useEffect(() => {
 		const loadChampionDetails = async () => {
 			if (!selectedChampion.name) return;
@@ -474,44 +542,20 @@ function App() {
 						...prev,
 						[selectedChampion.name]: data.note || "",
 					}));
-					// Kiểm tra và chuẩn hóa dữ liệu like từ backend
-					const receivedLikes = data.like?.[0];
-					if (
-						receivedLikes &&
-						typeof receivedLikes === "object" &&
-						["set1", "set2", "set3", "set4", "set5", "set6"].every(
-							key => typeof receivedLikes[key] === "number"
-						)
-					) {
-						setLikes(receivedLikes);
-					} else {
-						setLikes(defaultLikes);
-						console.warn(
-							`Dữ liệu like của ${selectedChampion.name} không hợp lệ, sử dụng giá trị mặc định.`
-						);
-					}
+					const receivedLikes = data.like?.[0] || defaultLikes;
+					setLikes(receivedLikes);
 					setHasLiked(false);
-				} else {
-					console.warn(
-						`Champion data for ${selectedChampion.name} not found, using default state.`
-					);
 				}
 			} catch (error) {
-				if (error.response && error.response.status === 404) {
-					console.warn(
-						`Champion ${selectedChampion.name} not found on server, using default state.`
-					);
-				} else {
-					console.error("Error loading champion details:", error);
-					alert("Không thể tải chi tiết tướng. Vui lòng thử lại sau.");
-				}
+				console.error("Lỗi tải chi tiết tướng:", error);
+				alert("Không thể tải chi tiết tướng. Vui lòng thử lại sau.");
 			}
 		};
 
 		loadChampionDetails();
 	}, [selectedChampion.name]);
 
-	// Load comments when selectedChampion changes
+	// Tải bình luận khi thay đổi tướng được chọn
 	useEffect(() => {
 		const loadComments = async () => {
 			if (!selectedChampion.name) return;
@@ -520,7 +564,7 @@ function App() {
 				const response = await axios.get("http://localhost:5000/api/comments");
 				setCommentData(response.data);
 			} catch (error) {
-				console.error("Error loading comments:", error);
+				console.error("Lỗi tải bình luận:", error);
 				alert("Không thể tải bình luận. Vui lòng thử lại sau.");
 			}
 		};
@@ -528,73 +572,101 @@ function App() {
 		loadComments();
 	}, [selectedChampion.name]);
 
-	// Handle like button click
-	const handleLike = async setNumber => {
-		if (hasLiked) {
-			alert("Bạn đã nhấn thích rồi! Mỗi phiên chỉ được thích một lần.");
-			return;
-		}
+	// Lọc danh sách cổ vật dựa trên tìm kiếm và độ hiếm
+	const filteredRelicList = useMemo(() => {
+		return sortedRelicList.filter(relic => {
+			const matchesSearch = relic.name
+				.toLowerCase()
+				.includes(relicSearch.toLowerCase());
+			const matchesRarity =
+				relicRarityFilter === "all" || relic.rarityRef === relicRarityFilter;
+			return matchesSearch && matchesRarity;
+		});
+	}, [sortedRelicList, relicSearch, relicRarityFilter]);
 
-		const originalLikes = { ...likes }; // Lưu trạng thái ban đầu để khôi phục nếu lỗi
-		const updatedLikes = {
-			...likes,
-			[`set${setNumber}`]: (likes[`set${setNumber}`] || 0) + 1,
-		};
+	// Lọc danh sách sức mạnh dựa trên tìm kiếm và độ hiếm
+	const filteredPowerList = useMemo(() => {
+		return sortedPowerList.filter(power => {
+			const matchesSearch = power.name
+				.toLowerCase()
+				.includes(powerSearch.toLowerCase());
+			const matchesRarity =
+				powerRarityFilter === "all" || power.rarityRef === powerRarityFilter;
+			return matchesSearch && matchesRarity;
+		});
+	}, [sortedPowerList, powerSearch, powerRarityFilter]);
 
-		// Cập nhật trạng thái UI trước
-		setLikes(updatedLikes);
-		setHasLiked(true);
+	// Lọc danh sách vật phẩm dựa trên tìm kiếm và độ hiếm
+	const filteredItemList = useMemo(() => {
+		return sortedItemList.filter(item => {
+			const matchesSearch = item.name
+				.toLowerCase()
+				.includes(itemSearch.toLowerCase());
+			const matchesRarity =
+				itemRarityFilter === "all" || item.rarityRef === itemRarityFilter;
+			return matchesSearch && matchesRarity;
+		});
+	}, [sortedItemList, itemSearch, itemRarityFilter]);
 
-		// Lưu trạng thái vào object để gửi lên server
-		const state = {
-			selectedChampion,
-			likes: updatedLikes,
-			hasLiked: true,
-		};
+	// Lọc danh sách tướng dựa trên tìm kiếm và khu vực
+	const filteredChampionList = useMemo(() => {
+		return championData.filter(champion => {
+			const matchesSearch = champion.name
+				.toLowerCase()
+				.includes(championSearch.toLowerCase());
+			const matchesRegion =
+				regionFilter === "all" ||
+				(champion.regions && champion.regions.includes(regionFilter));
+			return matchesSearch && matchesRegion;
+		});
+	}, [championData, championSearch, regionFilter]);
 
-		try {
-			const response = await axios.post(
-				"http://localhost:5000/api/like-champion",
-				{
-					championName: selectedChampion.name,
-					like: updatedLikes,
-				}
-			);
-
-			// Lưu trạng thái vào localStorage sau khi server phản hồi thành công
-			localStorage.setItem("championConfig", JSON.stringify(state));
-			alert(response.data.message);
-		} catch (error) {
-			// Khôi phục trạng thái nếu có lỗi
-			setLikes(originalLikes);
-			setHasLiked(false);
-			console.error(
-				"Lỗi khi lưu lượt thích:",
-				error.message,
-				error.response ? error.response.data : "Không có phản hồi từ server"
-			);
-
-			// Xử lý lỗi cụ thể
-			if (error.response) {
-				if (error.response.status === 400) {
-					alert("Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.");
-				} else if (error.response.status === 404) {
-					alert("Không tìm thấy tướng để cập nhật lượt thích.");
-				} else {
-					alert(
-						`Lỗi khi lưu lượt thích: ${
-							error.response.data.message || "Không xác định"
-						}`
-					);
-				}
-			} else {
-				alert("Không thể kết nối đến server. Vui lòng thử lại sau.");
+	// Xử lý sự kiện nhấn nút thích
+	const handleLike = useCallback(
+		async setNumber => {
+			if (hasLiked) {
+				alert("Bạn đã nhấn thích rồi! Mỗi phiên chỉ được thích một lần.");
+				return;
 			}
-		}
-	};
 
-	// Handle add comment
-	const handleAddComment = async () => {
+			const updatedLikes = {
+				...likes,
+				[`set${setNumber}`]: (likes[`set${setNumber}`] || 0) + 1,
+			};
+
+			setLikes(updatedLikes);
+			setHasLiked(true);
+
+			try {
+				const response = await axios.post(
+					"http://localhost:5000/api/like-champion",
+					{
+						championName: selectedChampion.name,
+						like: updatedLikes,
+					}
+				);
+
+				localStorage.setItem(
+					"championConfig",
+					JSON.stringify({
+						selectedChampion,
+						likes: updatedLikes,
+						hasLiked: true,
+					})
+				);
+				alert(response.data.message);
+			} catch (error) {
+				setLikes(likes);
+				setHasLiked(false);
+				console.error("Lỗi khi lưu lượt thích:", error);
+				alert("Lỗi khi lưu lượt thích. Vui lòng thử lại sau.");
+			}
+		},
+		[hasLiked, likes, selectedChampion.name]
+	);
+
+	// Xử lý thêm bình luận
+	const handleAddComment = useCallback(async () => {
 		if (!userName.trim() || !newComment.trim()) {
 			alert("Vui lòng nhập đầy đủ tên và bình luận!");
 			return;
@@ -614,157 +686,190 @@ function App() {
 			setNewComment("");
 			alert(response.data.message);
 		} catch (error) {
-			console.error("Error adding comment:", error);
+			console.error("Lỗi khi gửi bình luận:", error);
 			alert("Lỗi khi gửi bình luận. Vui lòng thử lại sau.");
 		}
-	};
+	}, [userName, newComment, selectedChampion.name, commentData]);
 
-	// Memoized getItemImage
-	const getItemImage = useCallback(item => {
+	// Lấy hình ảnh của item
+	const getItemImage = useCallback((item, setNumber) => {
 		if (!item?.name || !item.type) {
-			console.warn(`Invalid item: ${JSON.stringify(item)}`);
 			return {
 				assetAbsolutePath: "default-item.png",
 				assetFullAbsolutePath: "default-item.png",
 			};
 		}
 
-		const list =
-			item.type === ITEM_TYPES.RELIC
-				? relicList
-				: item.type === ITEM_TYPES.POWER
-				? powerList
-				: itemList;
+		let list;
+		if (item.type === ITEM_TYPES.RELIC) {
+			list = relicList;
+		} else if (item.type === ITEM_TYPES.POWER) {
+			list = setNumber === 7 ? adventurePowerList : powerList;
+		} else {
+			list = itemList;
+		}
 
 		const entry = list.find(entry => entry.name === item.name);
-		if (!entry) {
-			console.warn(`Item not found: ${item.name} (${item.type})`);
-			return {
-				assetAbsolutePath: "default-item.png",
-				assetFullAbsolutePath: "default-item.png",
-			};
-		}
-
 		return {
-			assetAbsolutePath: entry.assetAbsolutePath || "default-item.png",
+			assetAbsolutePath: entry?.assetAbsolutePath || "default-item.png",
 			assetFullAbsolutePath:
-				entry.assetFullAbsolutePath ||
-				entry.assetAbsolutePath ||
+				entry?.assetFullAbsolutePath ||
+				entry?.assetAbsolutePath ||
 				"default-item.png",
 		};
 	}, []);
 
-	// Utility functions
-	const updateSlots = (
-		setNumber,
-		slotIndex,
-		newItem,
-		removeFromSource = false,
-		sourceSet = null,
-		sourceIndex = null
-	) => {
-		const updateState = (setter, prev) => {
-			if (setNumber <= 6) {
-				return {
-					...prev,
-					[setNumber]: prev[setNumber].map((slot, idx) =>
-						idx === slotIndex ? newItem : slot
-					),
-				};
-			}
-			return prev.map((slot, idx) => (idx === slotIndex ? newItem : slot));
-		};
-
-		if (setNumber <= 6) {
-			setRelicSets(prev => updateState(setRelicSets, prev));
-		} else if (setNumber === 7) {
-			setPowerSlots(prev => updateState(setPowerSlots, prev));
-		} else if (setNumber === 8) {
-			setItemSlots(prev => updateState(setItemSlots, prev));
-		} else if (setNumber === 9) {
-			setDefaultPowerSlots(prev => updateState(setDefaultPowerSlots, prev));
-		}
-
-		if (removeFromSource && sourceSet && sourceIndex !== undefined) {
-			if (sourceSet <= 6) {
-				setRelicSets(prev => ({
-					...prev,
-					[sourceSet]: prev[sourceSet].map((slot, idx) =>
-						idx === sourceIndex ? null : slot
-					),
-				}));
-			} else if (sourceSet === 7) {
-				setPowerSlots(prev =>
-					prev.map((slot, idx) => (idx === sourceIndex ? null : slot))
-				);
-			} else if (sourceSet === 8) {
-				setItemSlots(prev =>
-					prev.map((slot, idx) => (idx === sourceIndex ? null : slot))
-				);
-			} else if (sourceSet === 9) {
-				setDefaultPowerSlots(prev =>
-					prev.map((slot, idx) => (idx === sourceIndex ? null : slot))
-				);
-			}
-		}
-	};
-
-	// Event handlers
-	const handleDragStart = (e, itemName, itemType, sourceSet, sourceIndex) => {
-		e.dataTransfer.setData(
-			"text/plain",
-			JSON.stringify({ name: itemName, type: itemType, sourceSet, sourceIndex })
-		);
-	};
-
-	const handleDrop = (e, slotIndex, setNumber) => {
-		e.preventDefault();
-		const data = e.dataTransfer.getData("text/plain");
-		if (!data) return;
-
-		const { name, type, sourceSet, sourceIndex } = JSON.parse(data);
-		if (
-			(setNumber <= 6 && type !== ITEM_TYPES.RELIC) ||
-			((setNumber === 7 || setNumber === 9) && type !== ITEM_TYPES.POWER) ||
-			(setNumber === 8 && type !== ITEM_TYPES.ITEM)
-		) {
-			return;
-		}
-
-		updateSlots(
+	// Cập nhật slot khi kéo thả hoặc xóa item
+	const updateSlots = useCallback(
+		(
 			setNumber,
 			slotIndex,
-			{ name, type },
-			true,
-			sourceSet,
-			sourceIndex
-		);
-	};
+			newItem,
+			removeFromSource = false,
+			sourceSet = null,
+			sourceIndex = null
+		) => {
+			const updateState = (setter, prev) => {
+				if (setNumber <= 6) {
+					return {
+						...prev,
+						[setNumber]: prev[setNumber].map((slot, idx) =>
+							idx === slotIndex ? newItem : slot
+						),
+					};
+				}
+				return prev.map((slot, idx) => (idx === slotIndex ? newItem : slot));
+			};
 
-	const handleRemoveItem = (slotIndex, setNumber) => {
-		updateSlots(setNumber, slotIndex, null);
-	};
+			if (setNumber <= 6) {
+				setRelicSets(prev => updateState(setRelicSets, prev));
+			} else if (setNumber === 7) {
+				setPowerSlots(prev => updateState(setPowerSlots, prev));
+			} else if (setNumber === 8) {
+				setItemSlots(prev => updateState(setItemSlots, prev));
+			} else if (setNumber === 9) {
+				setDefaultPowerSlots(prev => updateState(setDefaultPowerSlots, prev));
+			}
 
-	const handleNoteChange = (e, championName) => {
+			if (removeFromSource && sourceSet && sourceIndex !== undefined) {
+				if (sourceSet <= 6) {
+					setRelicSets(prev => ({
+						...prev,
+						[sourceSet]: prev[sourceSet].map((slot, idx) =>
+							idx === sourceIndex ? null : slot
+						),
+					}));
+				} else if (sourceSet === 7) {
+					setPowerSlots(prev =>
+						prev.map((slot, idx) => (idx === sourceIndex ? null : slot))
+					);
+				} else if (sourceSet === 8) {
+					setItemSlots(prev =>
+						prev.map((slot, idx) => (idx === sourceIndex ? null : slot))
+					);
+				} else if (sourceSet === 9) {
+					setDefaultPowerSlots(prev =>
+						prev.map((slot, idx) => (idx === sourceIndex ? null : slot))
+					);
+				}
+			}
+		},
+		[]
+	);
+
+	// Xử lý sự kiện bắt đầu kéo
+	const handleDragStart = useCallback(
+		(e, itemName, itemType, sourceSet, sourceIndex) => {
+			e.dataTransfer.setData(
+				"text/plain",
+				JSON.stringify({
+					name: itemName,
+					type: itemType,
+					sourceSet,
+					sourceIndex,
+				})
+			);
+		},
+		[]
+	);
+
+	// Xử lý sự kiện thả item
+	const handleDrop = useCallback(
+		(e, slotIndex, setNumber) => {
+			e.preventDefault();
+			const data = e.dataTransfer.getData("text/plain");
+			if (!data) return;
+
+			const { name, type, sourceSet, sourceIndex } = JSON.parse(data);
+			if (
+				(setNumber <= 6 && type !== ITEM_TYPES.RELIC) ||
+				((setNumber === 7 || setNumber === 9) && type !== ITEM_TYPES.POWER) ||
+				(setNumber === 8 && type !== ITEM_TYPES.ITEM)
+			) {
+				return;
+			}
+
+			updateSlots(
+				setNumber,
+				slotIndex,
+				{ name, type },
+				true,
+				sourceSet,
+				sourceIndex
+			);
+		},
+		[updateSlots]
+	);
+
+	// Xử lý xóa item khỏi slot
+	const handleRemoveItem = useCallback(
+		(slotIndex, setNumber) => {
+			updateSlots(setNumber, slotIndex, null);
+		},
+		[updateSlots]
+	);
+
+	// Xử lý thay đổi ghi chú
+	const handleNoteChange = useCallback((e, championName) => {
 		setNotes(prev => ({
 			...prev,
 			[championName]: e.target.value,
 		}));
-	};
+	}, []);
 
-	const togglePanel = type => {
-		setIsRelicPanelOpen(type === "relic" ? !isRelicPanelOpen : false);
-		setIsPowerPanelOpen(type === "power" ? !isPowerPanelOpen : false);
-		setIsItemPanelOpen(type === "item" ? !isItemPanelOpen : false);
-		setIsChampionPanelOpen(type === "champion" ? !isChampionPanelOpen : false);
-	};
+	// Bật/tắt panel tương ứng
+	const togglePanel = useCallback(type => {
+		if (type === "relic") {
+			setIsRelicPanelOpen(prev => !prev);
+			setIsPowerPanelOpen(false);
+			setIsItemPanelOpen(false);
+			setIsChampionPanelOpen(false);
+		} else if (type === "power") {
+			setIsPowerPanelOpen(prev => !prev);
+			setIsRelicPanelOpen(false);
+			setIsItemPanelOpen(false);
+			setIsChampionPanelOpen(false);
+		} else if (type === "item") {
+			setIsItemPanelOpen(prev => !prev);
+			setIsRelicPanelOpen(false);
+			setIsPowerPanelOpen(false);
+			setIsChampionPanelOpen(false);
+		} else if (type === "champion") {
+			setIsChampionPanelOpen(prev => !prev);
+			setIsRelicPanelOpen(false);
+			setIsPowerPanelOpen(false);
+			setIsItemPanelOpen(false);
+		}
+	}, []);
 
-	const handleSelectChampion = champion => {
+	// Xử lý chọn tướng
+	const handleSelectChampion = useCallback(champion => {
 		setSelectedChampion(champion);
 		setIsChampionPanelOpen(false);
-	};
+	}, []);
 
-	const handleSaveToFile = async () => {
+	// Xử lý xác nhận lưu
+	const handleConfirmSave = useCallback(async () => {
 		const state = {
 			selectedChampion,
 			relicSets,
@@ -795,18 +900,33 @@ function App() {
 				}
 			);
 			alert(response.data.message);
-
-			// Save to localStorage for next reload
 			localStorage.setItem("championConfig", JSON.stringify(state));
 		} catch (error) {
-			console.error(
-				"Lỗi chi tiết:",
-				error.message,
-				error.response ? error.response.data : "Không có phản hồi từ server"
-			);
+			console.error("Lỗi khi lưu dữ liệu:", error);
 			alert("Lỗi khi lưu dữ liệu. Vui lòng thử lại.");
+		} finally {
+			setIsConfirmModalOpen(false);
 		}
-	};
+	}, [
+		selectedChampion,
+		relicSets,
+		powerSlots,
+		defaultPowerSlots,
+		itemSlots,
+		notes,
+		likes,
+		hasLiked,
+	]);
+
+	// Xử lý hủy lưu
+	const handleCancelSave = useCallback(() => {
+		setIsConfirmModalOpen(false);
+	}, []);
+
+	// Xử lý nhấn nút lưu
+	const handleSaveToFile = useCallback(() => {
+		setIsConfirmModalOpen(true);
+	}, []);
 
 	return (
 		<>
@@ -873,6 +993,7 @@ function App() {
 								handleLike={handleLike}
 								hasLiked={hasLiked}
 								likes={likes}
+								openPanel={togglePanel}
 							/>
 						))}
 					</div>
@@ -884,6 +1005,7 @@ function App() {
 							handleDragStart={handleDragStart}
 							handleRemoveItem={handleRemoveItem}
 							getItemImage={getItemImage}
+							openPanel={togglePanel}
 						/>
 					</div>
 
@@ -894,6 +1016,7 @@ function App() {
 							handleDragStart={handleDragStart}
 							handleRemoveItem={handleRemoveItem}
 							getItemImage={getItemImage}
+							openPanel={togglePanel}
 						/>
 					</div>
 
@@ -904,6 +1027,7 @@ function App() {
 							handleDragStart={handleDragStart}
 							handleRemoveItem={handleRemoveItem}
 							getItemImage={getItemImage}
+							openPanel={togglePanel}
 						/>
 					</div>
 
@@ -926,6 +1050,12 @@ function App() {
 							handleAddComment={handleAddComment}
 						/>
 					</div>
+
+					<ConfirmModal
+						isOpen={isConfirmModalOpen}
+						onConfirm={handleConfirmSave}
+						onCancel={handleCancelSave}
+					/>
 				</div>
 			</div>
 
@@ -938,8 +1068,28 @@ function App() {
 					>
 						Đóng
 					</button>
+					<div className='panel-controls'>
+						<input
+							type='text'
+							className='search-input'
+							placeholder='Tìm kiếm cổ vật...'
+							value={relicSearch}
+							onChange={e => setRelicSearch(e.target.value)}
+						/>
+						<select
+							className='rarity-filter'
+							value={relicRarityFilter}
+							onChange={e => setRelicRarityFilter(e.target.value)}
+						>
+							{RARITY_FILTERS.map(filter => (
+								<option key={filter.value} value={filter.value}>
+									{filter.label}
+								</option>
+							))}
+						</select>
+					</div>
 					<div className='relic-list'>
-						{sortedRelicList.map((relic, index) => (
+						{filteredRelicList.map((relic, index) => (
 							<img
 								key={index}
 								loading='lazy'
@@ -970,8 +1120,28 @@ function App() {
 					>
 						Đóng
 					</button>
+					<div className='panel-controls'>
+						<input
+							type='text'
+							className='search-input'
+							placeholder='Tìm kiếm sức mạnh...'
+							value={powerSearch}
+							onChange={e => setPowerSearch(e.target.value)}
+						/>
+						<select
+							className='rarity-filter'
+							value={powerRarityFilter}
+							onChange={e => setPowerRarityFilter(e.target.value)}
+						>
+							{RARITY_FILTERS.map(filter => (
+								<option key={filter.value} value={filter.value}>
+									{filter.label}
+								</option>
+							))}
+						</select>
+					</div>
 					<div className='power-list'>
-						{sortedPowerList.map((power, index) => (
+						{filteredPowerList.map((power, index) => (
 							<img
 								key={index}
 								loading='lazy'
@@ -1002,8 +1172,28 @@ function App() {
 					>
 						Đóng
 					</button>
+					<div className='panel-controls'>
+						<input
+							type='text'
+							className='search-input'
+							placeholder='Tìm kiếm vật phẩm...'
+							value={itemSearch}
+							onChange={e => setItemSearch(e.target.value)}
+						/>
+						<select
+							className='rarity-filter'
+							value={itemRarityFilter}
+							onChange={e => setItemRarityFilter(e.target.value)}
+						>
+							{RARITY_FILTERS.map(filter => (
+								<option key={filter.value} value={filter.value}>
+									{filter.label}
+								</option>
+							))}
+						</select>
+					</div>
 					<div className='item-list'>
-						{sortedItemList.map((item, index) => (
+						{filteredItemList.map((item, index) => (
 							<div key={index} className='item-list-item'>
 								<img
 									loading='lazy'
@@ -1035,8 +1225,28 @@ function App() {
 					>
 						Đóng
 					</button>
+					<div className='panel-controls'>
+						<input
+							type='text'
+							className='search-input'
+							placeholder='Tìm kiếm tướng...'
+							value={championSearch}
+							onChange={e => setChampionSearch(e.target.value)}
+						/>
+						<select
+							className='region-filter'
+							value={regionFilter}
+							onChange={e => setRegionFilter(e.target.value)}
+						>
+							{regionFilters.map(region => (
+								<option key={region.value} value={region.value}>
+									{region.label}
+								</option>
+							))}
+						</select>
+					</div>
 					<div className='champion-list'>
-						{championData.map((champion, index) => (
+						{filteredChampionList.map((champion, index) => (
 							<div key={index} className='champion-list-item'>
 								<ChampionCard
 									champion={champion}
