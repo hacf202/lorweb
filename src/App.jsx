@@ -11,6 +11,7 @@ import axios from "axios";
 
 // Định nghĩa URL backend
 const BASE_URL = "https://lorweb-4.onrender.com";
+// const BASE_URL = "./chamPOC.json";
 
 // Định nghĩa các hằng số cho số lượng slot và loại item
 const SLOT_SIZES = {
@@ -98,44 +99,126 @@ const ItemSlot = memo(
 		handleRemoveItem,
 		getItemImage,
 		openPanel,
-	}) => (
-		<div
-			className={`${type}-slot ${slot ? "filled" : ""}`}
-			onDrop={e => handleDrop(e, slotIndex, setNumber)}
-			onDragOver={e => e.preventDefault()}
-			onClick={() => !slot && openPanel && openPanel(type)}
-		>
-			{slot ? (
-				<div className={`${type}-slot-content`}>
-					<img
-						loading='lazy'
-						className={`icon${type.charAt(0).toUpperCase() + type.slice(1)}`}
-						src={getItemImage(slot, setNumber).assetAbsolutePath}
-						alt={slot.name}
-						draggable
-						onDragStart={e =>
-							handleDragStart(e, slot.name, type, setNumber, slotIndex)
-						}
-					/>
-					<div className='tooltip'>
+		selectedItem,
+		handleSelectItemToSlot,
+	}) => {
+		const handleTouchStart = (
+			e,
+			itemName,
+			itemType,
+			sourceSet,
+			sourceIndex
+		) => {
+			const touchData = JSON.stringify({
+				name: itemName,
+				type: itemType,
+				sourceSet,
+				sourceIndex,
+			});
+			e.target.dataset.touchData = touchData;
+			handleDragStart(e, itemName, itemType, sourceSet, sourceIndex);
+			e.target.classList.add("dragging");
+		};
+
+		const handleTouchMove = e => {
+			e.preventDefault();
+			const touch = e.touches[0];
+			const element = document.elementFromPoint(touch.clientX, touch.clientY);
+			document.querySelectorAll(".drag-over").forEach(el => {
+				el.classList.remove("drag-over");
+			});
+			if (element && element.classList.contains(`${type}-slot`)) {
+				element.classList.add("drag-over");
+			}
+		};
+
+		const handleTouchEnd = e => {
+			const touch = e.changedTouches[0];
+			const targetElement = document.elementFromPoint(
+				touch.clientX,
+				touch.clientY
+			);
+
+			document.querySelectorAll(".drag-over").forEach(el => {
+				el.classList.remove("drag-over");
+			});
+			document.querySelectorAll(".dragging").forEach(el => {
+				el.classList.remove("dragging");
+			});
+
+			if (targetElement && targetElement.classList.contains(`${type}-slot`)) {
+				const touchData = e.target.dataset.touchData;
+				if (touchData) {
+					e.dataTransfer = {
+						getData: () => touchData,
+					};
+					const parentSlot = targetElement.closest(`.${type}-slot`);
+					const slotIndex = Array.from(parentSlot.parentNode.children).indexOf(
+						parentSlot
+					);
+					handleDrop(e, slotIndex, setNumber);
+				}
+			}
+		};
+
+		const handleSlotTouch = () => {
+			if (!slot && selectedItem && selectedItem.type === type) {
+				handleSelectItemToSlot(slotIndex, setNumber, selectedItem);
+			} else if (!slot) {
+				openPanel(type, setNumber);
+			}
+		};
+
+		return (
+			<div
+				className={`${type}-slot ${slot ? "filled" : ""} ${
+					selectedItem && selectedItem.type === type && !slot
+						? "selectable"
+						: ""
+				}`}
+				onDrop={e => handleDrop(e, slotIndex, setNumber)}
+				onDragOver={e => e.preventDefault()}
+				onClick={handleSlotTouch}
+				onTouchEnd={slot ? handleTouchEnd : undefined}
+			>
+				{slot ? (
+					<div className={`${type}-slot-content`}>
 						<img
 							loading='lazy'
-							src={getItemImage(slot, setNumber).assetFullAbsolutePath}
+							className={`icon${type.charAt(0).toUpperCase() + type.slice(1)}`}
+							src={getItemImage(slot, setNumber).assetAbsolutePath}
 							alt={slot.name}
+							draggable
+							onDragStart={e =>
+								handleDragStart(e, slot.name, type, setNumber, slotIndex)
+							}
+							onTouchStart={e =>
+								handleTouchStart(e, slot.name, type, setNumber, slotIndex)
+							}
+							onTouchMove={handleTouchMove}
 						/>
+						<div className='tooltip'>
+							<img
+								loading='lazy'
+								src={getItemImage(slot, setNumber).assetFullAbsolutePath}
+								alt={slot.name}
+							/>
+						</div>
+						<button
+							className={`delete-${type}-btn`}
+							onClick={() => handleRemoveItem(slotIndex, setNumber)}
+						>
+							✖
+						</button>
 					</div>
-					<button
-						className={`delete-${type}-btn`}
-						onClick={() => handleRemoveItem(slotIndex, setNumber)}
-					>
-						✖
-					</button>
-				</div>
-			) : (
-				<p>+</p>
-			)}
-		</div>
-	)
+				) : (
+					<p className='select-item-mobile'>
+						{selectedItem && selectedItem.type === type ? "" : "+"}
+					</p>
+				)}
+			</div>
+		);
+	}
 );
 
 // Component hiển thị bộ cổ vật
@@ -150,6 +233,8 @@ const RelicSet = ({
 	hasLiked,
 	likes,
 	openPanel,
+	selectedItem,
+	handleSelectItemToSlot,
 }) => (
 	<div className='relic-set'>
 		<h2>Bộ {setNumber}</h2>
@@ -169,6 +254,8 @@ const RelicSet = ({
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
 					openPanel={openPanel}
+					selectedItem={selectedItem}
+					handleSelectItemToSlot={handleSelectItemToSlot}
 				/>
 			))}
 		</div>
@@ -190,6 +277,8 @@ const PowerSet = ({
 	handleRemoveItem,
 	getItemImage,
 	openPanel,
+	selectedItem,
+	handleSelectItemToSlot,
 }) => (
 	<div className='power-set'>
 		<h2>Sức Mạnh Phiêu Lưu</h2>
@@ -206,36 +295,8 @@ const PowerSet = ({
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
 					openPanel={openPanel}
-				/>
-			))}
-		</div>
-	</div>
-);
-
-// Component hiển thị bộ vật phẩm
-const ItemSet = ({
-	itemSlots,
-	handleDrop,
-	handleDragStart,
-	handleRemoveItem,
-	getItemImage,
-	openPanel,
-}) => (
-	<div className='item-set'>
-		<h2>Vật Phẩm</h2>
-		<div className='item-slots'>
-			{itemSlots.map((slot, slotIndex) => (
-				<ItemSlot
-					key={slotIndex}
-					slot={slot}
-					slotIndex={slotIndex}
-					setNumber={8}
-					type={ITEM_TYPES.ITEM}
-					handleDrop={handleDrop}
-					handleDragStart={handleDragStart}
-					handleRemoveItem={handleRemoveItem}
-					getItemImage={getItemImage}
-					openPanel={openPanel}
+					selectedItem={selectedItem}
+					handleSelectItemToSlot={handleSelectItemToSlot}
 				/>
 			))}
 		</div>
@@ -250,6 +311,8 @@ const DefaultPowerSet = ({
 	handleRemoveItem,
 	getItemImage,
 	openPanel,
+	selectedItem,
+	handleSelectItemToSlot,
 }) => (
 	<div className='default-power-set'>
 		<h2>Chòm Sao</h2>
@@ -266,6 +329,42 @@ const DefaultPowerSet = ({
 					handleRemoveItem={handleRemoveItem}
 					getItemImage={getItemImage}
 					openPanel={openPanel}
+					selectedItem={selectedItem}
+					handleSelectItemToSlot={handleSelectItemToSlot}
+				/>
+			))}
+		</div>
+	</div>
+);
+
+// Component hiển thị bộ vật phẩm
+const ItemSet = ({
+	itemSlots,
+	handleDrop,
+	handleDragStart,
+	handleRemoveItem,
+	getItemImage,
+	openPanel,
+	selectedItem,
+	handleSelectItemToSlot,
+}) => (
+	<div className='item-set'>
+		<h2>Vật Phẩm</h2>
+		<div className='item-slots'>
+			{itemSlots.map((slot, slotIndex) => (
+				<ItemSlot
+					key={slotIndex}
+					slot={slot}
+					slotIndex={slotIndex}
+					setNumber={8}
+					type={ITEM_TYPES.ITEM}
+					handleDrop={handleDrop}
+					handleDragStart={handleDragStart}
+					handleRemoveItem={handleRemoveItem}
+					getItemImage={getItemImage}
+					openPanel={openPanel}
+					selectedItem={selectedItem}
+					handleSelectItemToSlot={handleSelectItemToSlot}
 				/>
 			))}
 		</div>
@@ -428,7 +527,7 @@ const getValidDefaultItems = champion => {
 
 // Component chính của ứng dụng
 function App() {
-	// Sắp xếp danh sách cổ vật, sức mạnh, vật phẩm theo độ hiếm và tên
+	// Sắp xếp danh sách cổ vật, sức mạnh, vật phẩm, chòm sao theo độ hiếm và tên
 	const sortedRelicList = useMemo(
 		() =>
 			[...relicList].sort((a, b) => {
@@ -442,6 +541,16 @@ function App() {
 	const sortedPowerList = useMemo(
 		() =>
 			[...powerList].sort((a, b) => {
+				const rarityComparison =
+					rarityOrder[a.rarityRef] - rarityOrder[b.rarityRef];
+				return rarityComparison || a.name.localeCompare(b.name, "vi");
+			}),
+		[]
+	);
+
+	const sortedAdventurePowerList = useMemo(
+		() =>
+			[...adventurePowerList].sort((a, b) => {
 				const rarityComparison =
 					rarityOrder[a.rarityRef] - rarityOrder[b.rarityRef];
 				return rarityComparison || a.name.localeCompare(b.name, "vi");
@@ -501,6 +610,7 @@ function App() {
 	const [notes, setNotes] = useState(initialState?.notes || {});
 	const [isRelicPanelOpen, setIsRelicPanelOpen] = useState(false);
 	const [isPowerPanelOpen, setIsPowerPanelOpen] = useState(false);
+	const [powerPanelType, setPowerPanelType] = useState(null);
 	const [isItemPanelOpen, setIsItemPanelOpen] = useState(false);
 	const [isChampionPanelOpen, setIsChampionPanelOpen] = useState(false);
 	const [hasLiked, setHasLiked] = useState(false);
@@ -510,15 +620,19 @@ function App() {
 	const [newComment, setNewComment] = useState("");
 	const [relicSearch, setRelicSearch] = useState("");
 	const [powerSearch, setPowerSearch] = useState("");
+	const [defaultPowerSearch, setDefaultPowerSearch] = useState("");
 	const [itemSearch, setItemSearch] = useState("");
 	const [championSearch, setChampionSearch] = useState("");
 	const [relicRarityFilter, setRelicRarityFilter] = useState("all");
 	const [powerRarityFilter, setPowerRarityFilter] = useState("all");
+	const [defaultPowerRarityFilter, setDefaultPowerRarityFilter] =
+		useState("all");
 	const [itemRarityFilter, setItemRarityFilter] = useState("all");
 	const [regionFilter, setRegionFilter] = useState("all");
 	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
+	const [selectedItem, setSelectedItem] = useState(null); // Trạng thái lưu item được chọn
 
 	// Tải danh sách tướng từ API khi khởi động
 	useEffect(() => {
@@ -526,13 +640,11 @@ function App() {
 			setIsLoading(true);
 			try {
 				const response = await axios.get(`${BASE_URL}/api/champions`);
-				console.log("Champion data:", response.data); // Debug log
 				setChampionData(response.data);
 				if (response.data.length > 0 && !selectedChampion.name) {
 					setSelectedChampion(response.data[0]);
 				}
-			} catch (error) {
-				console.error("Lỗi tải danh sách tướng:", error);
+			} catch {
 				setError("Không thể tải danh sách tướng. Vui lòng thử lại sau.");
 			} finally {
 				setIsLoading(false);
@@ -551,7 +663,6 @@ function App() {
 				const response = await axios.get(
 					`${BASE_URL}/api/get-champion/${selectedChampion.name}`
 				);
-				console.log("Champion details:", response.data); // Debug log
 				const data = response.data;
 				if (data) {
 					const { relicSets, powerSlots, defaultPowerSlots, itemSlots } =
@@ -568,8 +679,7 @@ function App() {
 					setLikes(receivedLikes);
 					setHasLiked(false);
 				}
-			} catch (error) {
-				console.error("Lỗi tải chi tiết tướng:", error);
+			} catch {
 				setError("Không thể tải chi tiết tướng. Vui lòng thử lại sau.");
 			} finally {
 				setIsLoading(false);
@@ -586,10 +696,8 @@ function App() {
 			setIsLoading(true);
 			try {
 				const response = await axios.get(`${BASE_URL}/api/comments`);
-				console.log("Comments:", response.data); // Debug log
 				setCommentData(response.data);
-			} catch (error) {
-				console.error("Lỗi tải bình luận:", error);
+			} catch {
 				setError("Không thể tải bình luận. Vui lòng thử lại sau.");
 			} finally {
 				setIsLoading(false);
@@ -611,9 +719,9 @@ function App() {
 		});
 	}, [sortedRelicList, relicSearch, relicRarityFilter]);
 
-	// Lọc danh sách sức mạnh dựa trên tìm kiếm và độ hiếm
-	const filteredPowerList = useMemo(() => {
-		return sortedPowerList.filter(power => {
+	// Lọc danh sách sức mạnh phiêu lưu dựa trên tìm kiếm và độ hiếm
+	const filteredAdventurePowerList = useMemo(() => {
+		return sortedAdventurePowerList.filter(power => {
 			const matchesSearch = power.name
 				.toLowerCase()
 				.includes(powerSearch.toLowerCase());
@@ -621,7 +729,20 @@ function App() {
 				powerRarityFilter === "all" || power.rarityRef === powerRarityFilter;
 			return matchesSearch && matchesRarity;
 		});
-	}, [sortedPowerList, powerSearch, powerRarityFilter]);
+	}, [sortedAdventurePowerList, powerSearch, powerRarityFilter]);
+
+	// Lọc danh sách chòm sao dựa trên tìm kiếm và độ hiếm
+	const filteredPowerList = useMemo(() => {
+		return sortedPowerList.filter(power => {
+			const matchesSearch = power.name
+				.toLowerCase()
+				.includes(defaultPowerSearch.toLowerCase());
+			const matchesRarity =
+				defaultPowerRarityFilter === "all" ||
+				power.rarityRef === defaultPowerRarityFilter;
+			return matchesSearch && matchesRarity;
+		});
+	}, [sortedPowerList, defaultPowerSearch, defaultPowerRarityFilter]);
 
 	// Lọc danh sách vật phẩm dựa trên tìm kiếm và độ hiếm
 	const filteredItemList = useMemo(() => {
@@ -665,11 +786,10 @@ function App() {
 			setHasLiked(true);
 
 			try {
-				const response = await axios.post(`${BASE_URL}/api/like-champion`, {
+				const _ = await axios.post(`${BASE_URL}/api/like-champion`, {
 					championName: selectedChampion.name,
 					like: updatedLikes,
 				});
-				console.log("Like response:", response.data); // Debug log
 				localStorage.setItem(
 					"championConfig",
 					JSON.stringify({
@@ -696,12 +816,11 @@ function App() {
 		}
 
 		try {
-			const response = await axios.post(`${BASE_URL}/api/comments`, {
+			const _ = await axios.post(`${BASE_URL}/api/comments`, {
 				userName,
 				comment: newComment,
 				championName: selectedChampion.name,
 			});
-			console.log("Comment response:", response.data); // Debug log
 			setCommentData([
 				...commentData,
 				{ userName, comment: newComment, championName: selectedChampion.name },
@@ -803,15 +922,14 @@ function App() {
 	// Xử lý sự kiện bắt đầu kéo
 	const handleDragStart = useCallback(
 		(e, itemName, itemType, sourceSet, sourceIndex) => {
-			e.dataTransfer.setData(
-				"text/plain",
-				JSON.stringify({
-					name: itemName,
-					type: itemType,
-					sourceSet,
-					sourceIndex,
-				})
-			);
+			const data = JSON.stringify({
+				name: itemName,
+				type: itemType,
+				sourceSet,
+				sourceIndex,
+			});
+			e.dataTransfer.setData("text/plain", data);
+			e.target.dataset.touchData = data;
 		},
 		[]
 	);
@@ -860,28 +978,55 @@ function App() {
 		}));
 	}, []);
 
+	// Xử lý chọn item vào slot
+	const handleSelectItemToSlot = useCallback(
+		(slotIndex, setNumber, item) => {
+			if (
+				(setNumber <= 6 && item.type !== ITEM_TYPES.RELIC) ||
+				((setNumber === 7 || setNumber === 9) &&
+					item.type !== ITEM_TYPES.POWER) ||
+				(setNumber === 8 && item.type !== ITEM_TYPES.ITEM)
+			) {
+				return;
+			}
+			updateSlots(setNumber, slotIndex, { name: item.name, type: item.type });
+			setSelectedItem(null); // Xóa item được chọn sau khi thêm
+		},
+		[updateSlots]
+	);
+
+	// Xử lý chọn item từ panel
+	const handleSelectItem = useCallback((name, type) => {
+		setSelectedItem({ name, type });
+	}, []);
+
 	// Bật/tắt panel tương ứng
-	const togglePanel = useCallback(type => {
+	const togglePanel = useCallback((type, setNumber) => {
 		if (type === "relic") {
 			setIsRelicPanelOpen(prev => !prev);
 			setIsPowerPanelOpen(false);
 			setIsItemPanelOpen(false);
 			setIsChampionPanelOpen(false);
+			setSelectedItem(null);
 		} else if (type === "power") {
 			setIsPowerPanelOpen(prev => !prev);
+			setPowerPanelType(setNumber === 7 ? "power" : "defaultPower");
 			setIsRelicPanelOpen(false);
 			setIsItemPanelOpen(false);
 			setIsChampionPanelOpen(false);
+			setSelectedItem(null);
 		} else if (type === "item") {
 			setIsItemPanelOpen(prev => !prev);
 			setIsRelicPanelOpen(false);
 			setIsPowerPanelOpen(false);
 			setIsChampionPanelOpen(false);
+			setSelectedItem(null);
 		} else if (type === "champion") {
 			setIsChampionPanelOpen(prev => !prev);
 			setIsRelicPanelOpen(false);
 			setIsPowerPanelOpen(false);
 			setIsItemPanelOpen(false);
+			setSelectedItem(null);
 		}
 	}, []);
 
@@ -889,6 +1034,7 @@ function App() {
 	const handleSelectChampion = useCallback(champion => {
 		setSelectedChampion(champion);
 		setIsChampionPanelOpen(false);
+		setSelectedItem(null);
 	}, []);
 
 	// Xử lý xác nhận lưu
@@ -906,7 +1052,7 @@ function App() {
 		const formatSlots = slots => slots.map(slot => (slot ? slot.name : null));
 
 		try {
-			const response = await axios.post(`${BASE_URL}/api/save-champion`, {
+			const _ = await axios.post(`${BASE_URL}/api/save-champion`, {
 				championName: selectedChampion.name,
 				defaultRelicsSet1: formatSlots(relicSets[1]),
 				defaultRelicsSet2: formatSlots(relicSets[2]),
@@ -919,10 +1065,8 @@ function App() {
 				defaultItems: formatSlots(itemSlots),
 				note: notes[selectedChampion.name] || "",
 			});
-			console.log("Save response:", response.data); // Debug log
 			localStorage.setItem("championConfig", JSON.stringify(state));
-		} catch (error) {
-			console.error("Lỗi khi lưu dữ liệu:", error);
+		} catch {
 			setError("Lỗi khi lưu dữ liệu. Vui lòng thử lại.");
 		} finally {
 			setIsConfirmModalOpen(false);
@@ -947,6 +1091,39 @@ function App() {
 	const handleSaveToFile = useCallback(() => {
 		setIsConfirmModalOpen(true);
 	}, []);
+
+	// Hàm xử lý touch end cho các panel
+	const handlePanelTouchEnd = useCallback(
+		(e, type, setNumber) => {
+			const touch = e.changedTouches[0];
+			const targetElement = document.elementFromPoint(
+				touch.clientX,
+				touch.clientY
+			);
+
+			document.querySelectorAll(".drag-over").forEach(el => {
+				el.classList.remove("drag-over");
+			});
+			document.querySelectorAll(".dragging").forEach(el => {
+				el.classList.remove("dragging");
+			});
+
+			if (targetElement && targetElement.classList.contains(`${type}-slot`)) {
+				const touchData = e.target.dataset.touchData;
+				if (touchData) {
+					e.dataTransfer = {
+						getData: () => touchData,
+					};
+					const parentSlot = targetElement.closest(`.${type}-slot`);
+					const slotIndex = Array.from(parentSlot.parentNode.children).indexOf(
+						parentSlot
+					);
+					handleDrop(e, slotIndex, setNumber);
+				}
+			}
+		},
+		[handleDrop]
+	);
 
 	return (
 		<>
@@ -982,11 +1159,19 @@ function App() {
 					</button>
 					<button
 						className='open-power-panel'
-						onClick={() => togglePanel("power")}
+						onClick={() => togglePanel("power", 7)}
 					>
-						{isPowerPanelOpen
-							? "Đóng Danh Sách Sức Mạnh"
-							: "Mở Danh Sách Sức Mạnh"}
+						{isPowerPanelOpen && powerPanelType === "power"
+							? "Đóng Danh Sách Sức Mạnh Phiêu Lưu"
+							: "Mở Danh Sách Sức Mạnh Phiêu Lưu"}
+					</button>
+					<button
+						className='open-default-power-panel'
+						onClick={() => togglePanel("power", 9)}
+					>
+						{isPowerPanelOpen && powerPanelType === "defaultPower"
+							? "Đóng Danh Sách Chòm Sao"
+							: "Mở Danh Sách Chòm Sao"}
 					</button>
 					<button
 						className='open-item-panel'
@@ -1022,6 +1207,8 @@ function App() {
 								hasLiked={hasLiked}
 								likes={likes}
 								openPanel={togglePanel}
+								selectedItem={selectedItem}
+								handleSelectItemToSlot={handleSelectItemToSlot}
 							/>
 						))}
 					</div>
@@ -1034,17 +1221,8 @@ function App() {
 							handleRemoveItem={handleRemoveItem}
 							getItemImage={getItemImage}
 							openPanel={togglePanel}
-						/>
-					</div>
-
-					<div id='item-set'>
-						<ItemSet
-							itemSlots={itemSlots}
-							handleDrop={handleDrop}
-							handleDragStart={handleDragStart}
-							handleRemoveItem={handleRemoveItem}
-							getItemImage={getItemImage}
-							openPanel={togglePanel}
+							selectedItem={selectedItem}
+							handleSelectItemToSlot={handleSelectItemToSlot}
 						/>
 					</div>
 
@@ -1056,6 +1234,21 @@ function App() {
 							handleRemoveItem={handleRemoveItem}
 							getItemImage={getItemImage}
 							openPanel={togglePanel}
+							selectedItem={selectedItem}
+							handleSelectItemToSlot={handleSelectItemToSlot}
+						/>
+					</div>
+
+					<div id='item-set'>
+						<ItemSet
+							itemSlots={itemSlots}
+							handleDrop={handleDrop}
+							handleDragStart={handleDragStart}
+							handleRemoveItem={handleRemoveItem}
+							getItemImage={getItemImage}
+							openPanel={togglePanel}
+							selectedItem={selectedItem}
+							handleSelectItemToSlot={handleSelectItemToSlot}
 						/>
 					</div>
 
@@ -1121,7 +1314,12 @@ function App() {
 							<img
 								key={index}
 								loading='lazy'
-								className='iconRelic draggable'
+								className={`iconRelic draggable ${
+									selectedItem?.name === relic.name &&
+									selectedItem?.type === ITEM_TYPES.RELIC
+										? "selected"
+										: ""
+								}`}
 								src={
 									getItemImage({
 										name: relic.name,
@@ -1133,6 +1331,11 @@ function App() {
 								onDragStart={e =>
 									handleDragStart(e, relic.name, ITEM_TYPES.RELIC)
 								}
+								onTouchStart={e => {
+									handleSelectItem(relic.name, ITEM_TYPES.RELIC);
+									e.target.classList.add("selected");
+								}}
+								onTouchEnd={e => handlePanelTouchEnd(e, ITEM_TYPES.RELIC, 1)}
 							/>
 						))}
 					</div>
@@ -1141,10 +1344,16 @@ function App() {
 
 			<div className={`power-panel ${isPowerPanelOpen ? "open" : ""}`}>
 				<div className='power-panel-content'>
-					<h3>Danh sách Sức Mạnh</h3>
+					<h3>
+						{powerPanelType === "power"
+							? "Danh sách Sức Mạnh Phiêu Lưu"
+							: "Danh sách Chòm Sao"}
+					</h3>
 					<button
 						className='close-power-panel'
-						onClick={() => togglePanel("power")}
+						onClick={() =>
+							togglePanel("power", powerPanelType === "power" ? 7 : 9)
+						}
 					>
 						Đóng
 					</button>
@@ -1152,14 +1361,32 @@ function App() {
 						<input
 							type='text'
 							className='search-input'
-							placeholder='Tìm kiếm sức mạnh...'
-							value={powerSearch}
-							onChange={e => setPowerSearch(e.target.value)}
+							placeholder={
+								powerPanelType === "power"
+									? "Tìm kiếm sức mạnh phiêu lưu..."
+									: "Tìm kiếm chòm sao..."
+							}
+							value={
+								powerPanelType === "power" ? powerSearch : defaultPowerSearch
+							}
+							onChange={e =>
+								powerPanelType === "power"
+									? setPowerSearch(e.target.value)
+									: setDefaultPowerSearch(e.target.value)
+							}
 						/>
 						<select
 							className='rarity-filter'
-							value={powerRarityFilter}
-							onChange={e => setPowerRarityFilter(e.target.value)}
+							value={
+								powerPanelType === "power"
+									? powerRarityFilter
+									: defaultPowerRarityFilter
+							}
+							onChange={e =>
+								powerPanelType === "power"
+									? setPowerRarityFilter(e.target.value)
+									: setDefaultPowerRarityFilter(e.target.value)
+							}
 						>
 							{RARITY_FILTERS.map(filter => (
 								<option key={filter.value} value={filter.value}>
@@ -1169,21 +1396,43 @@ function App() {
 						</select>
 					</div>
 					<div className='power-list'>
-						{filteredPowerList.map((power, index) => (
+						{(powerPanelType === "power"
+							? filteredAdventurePowerList
+							: filteredPowerList
+						).map((power, index) => (
 							<img
 								key={index}
 								loading='lazy'
-								className='iconPower draggable'
+								className={`iconPower draggable ${
+									selectedItem?.name === power.name &&
+									selectedItem?.type === ITEM_TYPES.POWER
+										? "selected"
+										: ""
+								}`}
 								src={
-									getItemImage({
-										name: power.name,
-										type: ITEM_TYPES.POWER,
-									}).assetAbsolutePath
+									getItemImage(
+										{
+											name: power.name,
+											type: ITEM_TYPES.POWER,
+										},
+										powerPanelType === "power" ? 7 : 9
+									).assetAbsolutePath
 								}
 								alt={power.name}
 								draggable
 								onDragStart={e =>
 									handleDragStart(e, power.name, ITEM_TYPES.POWER)
+								}
+								onTouchStart={e => {
+									handleSelectItem(power.name, ITEM_TYPES.POWER);
+									e.target.classList.add("selected");
+								}}
+								onTouchEnd={e =>
+									handlePanelTouchEnd(
+										e,
+										ITEM_TYPES.POWER,
+										powerPanelType === "power" ? 7 : 9
+									)
 								}
 							/>
 						))}
@@ -1225,7 +1474,12 @@ function App() {
 							<div key={index} className='item-list-item'>
 								<img
 									loading='lazy'
-									className='iconItem draggable'
+									className={`iconItem draggable ${
+										selectedItem?.name === item.name &&
+										selectedItem?.type === ITEM_TYPES.ITEM
+											? "selected"
+											: ""
+									}`}
 									src={
 										getItemImage({
 											name: item.name,
@@ -1237,6 +1491,11 @@ function App() {
 									onDragStart={e =>
 										handleDragStart(e, item.name, ITEM_TYPES.ITEM)
 									}
+									onTouchStart={e => {
+										handleSelectItem(item.name, ITEM_TYPES.ITEM);
+										e.target.classList.add("selected");
+									}}
+									onTouchEnd={e => handlePanelTouchEnd(e, ITEM_TYPES.ITEM, 8)}
 								/>
 							</div>
 						))}

@@ -950,16 +950,6 @@
 		"rarityRef": "Rare"
 	},
 	{
-		"assetAbsolutePath": "https://dd.b.pvp.net/6_5_0/adventure/vi_vn/img/powers/P0109.png",
-		"assetFullAbsolutePath": "https://dd.b.pvp.net/6_5_0/adventure/vi_vn/img/powers/P0109-full.png",
-		"description": "<link=vocab.RoundStart><style=Vocab>Bắt Đầu Vòng Đấu</style></link>: Triệu hồi 1 Poro 1 tiêu hao ngẫu nhiên.",
-		"descriptionRaw": "Bắt Đầu Vòng Đấu: Triệu hồi 1 Poro 1 tiêu hao ngẫu nhiên.",
-		"name": "Những Người Bạn Nhỏ",
-		"powerCode": "P0109",
-		"rarity": "SỬ THI",
-		"rarityRef": "Epic"
-	},
-	{
 		"assetAbsolutePath": "https://dd.b.pvp.net/6_5_0/adventure/vi_vn/img/powers/P0108.png",
 		"assetFullAbsolutePath": "https://dd.b.pvp.net/6_5_0/adventure/vi_vn/img/powers/P0108-full.png",
 		"description": "<link=vocab.RoundStart><style=Vocab>Bắt Đầu Vòng Đấu</style></link>: Tạo trên tay 1 lá <link=card.self><style=AssociatedCard>Bản Năng Tiên Đoán</style></link> <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Phù Du</style></link>.",

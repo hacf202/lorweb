@@ -317,8 +317,7 @@
 
 .relic-slot,
 .power-slot,
-.item-slot,
-.default-power {
+.item-slot {
 	width: var(--slot-size);
 	height: var(--slot-size);
 	border: 2px dashed #ccc;
@@ -334,30 +333,33 @@
 
 .relic-slot.filled,
 .power-slot.filled,
-.item-slot.filled,
-.default-power.filled {
+.item-slot.filled {
 	border: none;
 	padding: 2px;
 }
 
 .relic-slot:hover,
 .power-slot:hover,
-.item-slot:hover,
-.default-power:hover {
+.item-slot:hover {
 	border-color: var(--text-color);
 }
 
 .relic-slot.filled:hover,
 .power-slot.filled:hover,
-.item-slot.filled:hover,
-.default-power.filled:hover {
+.item-slot.filled:hover {
 	border: none;
+}
+
+.relic-slot.drag-over,
+.power-slot.drag-over,
+.item-slot.drag-over {
+	background-color: rgba(46, 204, 113, 0.2);
+	border-color: #2ecc71;
 }
 
 .relic-slot p,
 .power-slot p,
-.item-slot p,
-.default-power p {
+.item-slot p {
 	font-size: 50px;
 	color: #faf8f8;
 	font-weight: bold;
@@ -365,8 +367,7 @@
 
 .relic-slot-content,
 .power-slot-content,
-.item-slot-content,
-.default-power-content {
+.item-slot-content {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -385,10 +386,17 @@
 	z-index: 5;
 }
 
+.iconRelic.dragging,
+.iconPower.dragging,
+.iconItem.dragging {
+	opacity: 0.6;
+	transform: scale(1.1);
+	transition: opacity 0.2s, transform 0.2s;
+}
+
 .delete-relic-btn,
 .delete-power-btn,
-.delete-item-btn,
-.delete-default-power-btn {
+.delete-item-btn {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -408,8 +416,7 @@
 
 .delete-relic-btn:hover,
 .delete-power-btn:hover,
-.delete-item-btn:hover,
-.delete-default-power-btn:hover {
+.delete-item-btn:hover {
 	background-color: #cc3333;
 }
 
@@ -440,8 +447,7 @@
 /* Tooltip for showing full image */
 .relic-slot-content:hover .tooltip,
 .power-slot-content:hover .tooltip,
-.item-slot-content:hover .tooltip,
-.default-power-content:hover .tooltip {
+.item-slot-content:hover .tooltip {
 	visibility: visible;
 	opacity: 1;
 }
@@ -511,6 +517,7 @@
 /* Buttons for opening panels and saving state */
 .open-relic-panel,
 .open-power-panel,
+.open-default-power-panel,
 .open-item-panel,
 .open-champion-panel,
 .save-defaults-btn {
@@ -533,17 +540,26 @@
 
 /* Specific colors for each button */
 .open-relic-panel {
-	top: 100px;
+	top: 80px;
 	background-color: var(--relic-btn-bg);
 }
 
 .open-power-panel {
-	top: 160px;
+	top: 130px;
 	background-color: var(--power-btn-bg);
+	font-size: 12px;
+	padding: 15px;
+}
+
+.open-default-power-panel {
+	top: 180px;
+	background-color: rgb(121, 180, 231);
+	width: 340px;
+	right: 50px;
 }
 
 .open-item-panel {
-	top: 220px;
+	top: 230px;
 	background-color: var(--item-btn-bg);
 }
 
@@ -553,11 +569,12 @@
 }
 
 .save-defaults-btn {
-	top: 340px;
+	top: 330px;
 	background-color: var(--save-btn-bg);
 }
 
 /* Hover effects */
+.open-default-power-panel,
 .open-relic-panel:hover,
 .open-power-panel:hover,
 .open-item-panel:hover,
@@ -568,6 +585,7 @@
 }
 
 /* Active effects */
+.open-default-power-panel,
 .open-relic-panel:active,
 .open-power-panel:active,
 .open-item-panel:active,
@@ -762,7 +780,30 @@
 	background-color: #222;
 	color: var(--text-color);
 }
+.relic-slot.selectable,
+.power-slot.selectable,
+.item-slot.selectable {
+	border: 2px solid #00ff00;
+	background-color: rgba(0, 255, 0, 0.1);
+}
 
+/* Đánh dấu item được chọn trong panel */
+.relic-list img.selected,
+.power-list img.selected,
+.item-list img.selected {
+	border: 2px solid #00ff00;
+	box-shadow: 0 0 5px #00ff00;
+}
+
+/* Cải thiện giao diện chạm trên di động */
+.relic-slot,
+.power-slot,
+.item-slot,
+.relic-list img,
+.power-list img,
+.item-list img {
+	touch-action: manipulation; /* Ngăn zoom khi chạm */
+}
 /* Responsive design */
 
 /* Tablet and larger screens (min-width: 679px) */
@@ -809,6 +850,7 @@
 		width: 400px;
 	}
 
+	.open-default-power-panel,
 	.open-relic-panel,
 	.open-power-panel,
 	.open-item-panel,
@@ -827,7 +869,6 @@
 	}
 
 	#mainView {
-		margin: 10px;
 		min-height: 100vh;
 		display: grid;
 		grid-template-rows: auto auto auto auto auto auto auto auto;
@@ -842,6 +883,8 @@
 			"notes"
 			"comments";
 		gap: 15px;
+		padding: 0px;
+		margin: 0px;
 	}
 	#picChamp {
 		top: 10px;
@@ -895,7 +938,7 @@
 		max-width: 95%;
 		width: auto;
 	}
-
+	.open-default-power-panel,
 	.open-relic-panel,
 	.open-power-panel,
 	.open-item-panel,
@@ -905,22 +948,7 @@
 		width: 100%;
 		max-width: 200px;
 		margin: 5px 0;
-		font-size: 10px;
-	}
-	.open-relic-panel {
-		top: 60px;
-	}
-	.open-power-panel {
-		top: 90px;
-	}
-	.open-item-panel {
-		top: 130px;
-	}
-	.open-champion-panel {
-		top: 170px;
-	}
-	.save-defaults-btn {
-		top: 200px;
+		font-size: 8px;
 	}
 
 	.relic-set,
@@ -982,8 +1010,7 @@
 
 	.relic-slot,
 	.power-slot,
-	.item-slot,
-	.default-power {
+	.item-slot {
 		width: var(--slot-size);
 		height: var(--slot-size);
 	}
@@ -1032,27 +1059,43 @@
 	}
 
 	.CanhBao {
-		font-size: 20px;
-		top: 20px;
+		font-size: 10px;
+		top: 5px;
 		right: 20px;
 		padding: 4px;
+		width: 200px;
+	}
+	.champion-panel-content {
+		position: relative;
+		width: 95px;
+		padding: 0px;
 	}
 	.relic-panel-content,
 	.power-panel-content,
-	.item-panel-content,
-	.champion-panel-content {
-		padding: 20px;
+	.item-panel-content {
 		position: relative;
-		width: 220px;
+		width: 130px;
+		padding: 0px;
 	}
-	.relic-panel,
-	.power-panel,
-	.item-panel,
+
 	.champion-panel {
 		position: fixed;
 		top: 20px;
 		right: calc(-1 * var(--panel-width));
-		width: 220px;
+		width: 95px;
+		height: 95%;
+		background-color: #222222b6;
+		z-index: 50;
+		transition: right 0.3s ease-in-out;
+		border-radius: 21px;
+	}
+	.relic-panel,
+	.power-panel,
+	.item-panel {
+		position: fixed;
+		top: 20px;
+		right: calc(-1 * var(--panel-width));
+		width: 120px;
 		height: 95%;
 		background-color: #222222b6;
 		z-index: 50;
@@ -1079,19 +1122,87 @@
 	}
 }
 
-/* Small mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
+/* Small mobile devices (max-width:360px) */
+@media (max-width: 360px) {
 	:root {
 		--slot-size: 50px;
 		--delete-btn-size: 10px;
 	}
 
+	/* Card container */
+	#container {
+		position: relative;
+		display: flex;
+		width: 80px;
+		height: 130px;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	/* Card hover effect */
+	#container::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.15);
+		z-index: 2;
+	}
+
+	#container:hover::before {
+		background-color: var(--hover-bg);
+	}
+
+	#container:hover {
+		cursor: pointer;
+	}
+
+	/* Card image */
+	#picChampions {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+	}
+
+	/* Region icon */
+	#region {
+		position: absolute;
+		z-index: 2;
+		display: inline-flex;
+		top: 5px;
+		left: 5px;
+	}
+
+	.icon {
+		width: 15px;
+		background-color: rgba(85, 85, 80, 0.507);
+		border-radius: 10px;
+		padding: 5px;
+		object-fit: cover;
+	}
+
+	/* Card title */
+	#title {
+		z-index: 3;
+		color: var(--text-color);
+		font-size: 12px;
+		position: absolute;
+		bottom: 20px;
+		background-color: rgba(26, 24, 24, 0.623);
+		padding: 5px;
+		width: 88%;
+	}
 	#mainView {
-		gap: 10px;
+		gap: 5px;
 	}
 
 	#picChamp {
-		width: 150px;
+		top: 0px;
+		left: 12px;
+		width: 90px;
 	}
 
 	.relic-set h2,
@@ -1100,7 +1211,7 @@
 	.default-power-set h2,
 	.note-set h2,
 	.comment-set h2 {
-		font-size: 16px;
+		font-size: 10px;
 	}
 
 	.note-content {
@@ -1119,15 +1230,43 @@
 	.comment-submit-btn {
 		font-size: 12px;
 	}
-
+	.open-default-power-panel,
 	.open-relic-panel,
 	.open-power-panel,
 	.open-item-panel,
 	.open-champion-panel,
 	.save-defaults-btn {
-		width: 160px;
+		width: 100px;
 		padding: 6px 10px;
-		font-size: 10px;
+		font-size: 8px;
+	}
+	.open-relic-panel {
+		top: 40px;
+		left: 110px;
+	}
+	.open-power-panel {
+		top: 40px;
+		left: 220px;
+		width: 120px;
+	}
+	.open-item-panel {
+		top: 75px;
+		left: 110px;
+	}
+	.open-default-power-panel {
+		top: 75px;
+		left: 220px;
+		width: 120px;
+	}
+	.open-champion-panel {
+		top: 110px;
+		left: 110px;
+	}
+	.save-defaults-btn {
+		top: 110px;
+		left: 220px;
+		width: 120px;
+		height: 30px;
 	}
 
 	.tooltip {
@@ -1156,5 +1295,44 @@
 	.modal-cancel-btn {
 		padding: 6px 12px;
 		font-size: 12px;
+	}
+	.close-relic-panel,
+	.close-power-panel,
+	.close-item-panel,
+	.close-champion-panel {
+		position: absolute;
+		width: 45px;
+		height: 20px;
+		top: 14px;
+		right: 0px;
+		padding: 2px 2px;
+		background-color: #ff4444;
+		color: var(--text-color);
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.relic-panel-content h3,
+	.power-panel-content h3,
+	.item-panel-content h3,
+	.champion-panel-content h3 {
+		color: var(--text-color);
+		margin-bottom: 10px;
+		font-size: 15px;
+		font-weight: bold;
+	}
+	.search-input {
+		padding: 8px;
+		background-color: transparent;
+		border: 1px solid var(--border-color);
+		border-radius: 5px;
+		color: var(--text-color);
+		font-size: 13px;
+		width: 70px;
+		outline: none;
+	}
+	.default-power-set,
+	.note-set {
+		width: 350px;
 	}
 }
