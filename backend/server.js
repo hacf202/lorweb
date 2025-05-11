@@ -211,6 +211,14 @@ app.post("/api/like-champion", async (req, res) => {
 		res.status(500).json({ message: `Error updating likes: ${error.message}` });
 	}
 });
+// Endpoint để tải file data.json
+app.get("/download-data", (req, res) => {
+	res.download(dataFilePath, "chamPOC.json", err => {
+		if (err) {
+			res.status(500).send("Lỗi khi tải file: " + err.message);
+		}
+	});
+});
 
 // API to get all champions data
 app.get("/api/champions", (req, res) => {
