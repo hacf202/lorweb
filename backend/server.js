@@ -3,28 +3,49 @@ const cors = require("cors");
 const fs = require("fs").promises;
 const path = require("path");
 const app = express();
-const port = 5000;
 
-// Cấu hình CORS để chấp nhận nhiều nguồn gốc
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+// Use Render's assigned port or default to 5000 for local development
+const port = process.env.PORT || 5000;
+
+// Configure CORS to accept multiple origins
+const allowedOrigins = [
+	"http://localhost:3000",
+	"http://localhost:5173",
+	// Add your Render frontend URL here, e.g., "https://your-frontend.onrender.com"
+	process.env.FRONTEND_URL || "*",
+];
 app.use(
 	cors({
 		origin: (origin, callback) => {
-			if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+			if (
+				!origin ||
+				allowedOrigins.includes(origin) ||
+				allowedOrigins.includes("*")
+			) {
 				callback(null, true);
 			} else {
-				callback(new Error("Không phải nguồn gốc được phép"));
+				callback(new Error("Not an allowed origin"));
 			}
 		},
 	})
 );
 app.use(express.json());
 
-// Định nghĩa đường dẫn tuyệt đối tới file chamPOC.json và commentUser.json
-const filePath = path.resolve(__dirname, "../src/chamPOC.json");
-const commentFilePath = path.resolve(__dirname, "../src/commentUser.json");
+// Define absolute paths to chamPOC.json and commentUser.json
+const dataDir = path.resolve(__dirname, "data");
+const filePath = path.join(dataDir, "chamPOC.json");
+const commentFilePath = path.join(dataDir, "commentUser.json");
 
-// Đọc dữ liệu hiện tại từ chamPOC.json
+// Ensure data directory exists
+const ensureDataDirectory = async () => {
+	try {
+		await fs.mkdir(dataDir, { recursive: true });
+	} catch (error) {
+		console.error("Error creating data directory:", error.message);
+	}
+};
+
+// Read current data from chamPOC.json
 let championData;
 const initializeData = async () => {
 	try {
@@ -38,22 +59,22 @@ const initializeData = async () => {
 		} else {
 			championData = [];
 			await fs.writeFile(filePath, "[]");
-			console.log("Tạo file chamPOC.json mới tại:", filePath);
+			console.log("Created new chamPOC.json at:", filePath);
 		}
 	} catch (error) {
-		console.error("Lỗi khởi tạo dữ liệu:", error.message);
+		console.error("Error initializing data:", error.message);
 		championData = [];
 		try {
 			await fs.writeFile(filePath, "[]");
-			console.log("Tạo file chamPOC.json mới do lỗi đọc:", error.message);
+			console.log("Created new chamPOC.json due to read error:", error.message);
 		} catch (writeError) {
-			console.error("Lỗi tạo file chamPOC.json:", writeError.message);
-			console.warn("Tiếp tục khởi động server với dữ liệu rỗng.");
+			console.error("Error creating chamPOC.json:", writeError.message);
+			console.warn("Continuing server startup with empty data.");
 		}
 	}
 };
 
-// Khởi tạo commentUser.json nếu chưa tồn tại
+// Initialize commentUser.json if it doesn't exist
 const initializeCommentData = async () => {
 	try {
 		const fileExists = await fs
@@ -62,19 +83,20 @@ const initializeCommentData = async () => {
 			.catch(() => false);
 		if (!fileExists) {
 			await fs.writeFile(commentFilePath, "[]");
-			console.log("Tạo file commentUser.json mới tại:", commentFilePath);
+			console.log("Created new commentUser.json at:", commentFilePath);
 		}
 	} catch (error) {
-		console.error("Lỗi khởi tạo commentUser.json:", error.message);
+		console.error("Error initializing commentUser.json:", error.message);
 	}
 };
 
-// Khởi động server sau khi đọc dữ liệu
+// Start server after initializing data
 const startServer = async () => {
+	await ensureDataDirectory();
 	await initializeData();
 	await initializeCommentData();
 
-	// API để lưu dữ liệu của tướng
+	// API to save champion data
 	app.post("/api/save-champion", async (req, res) => {
 		const {
 			championName,
@@ -108,32 +130,30 @@ const startServer = async () => {
 				note: note || "",
 			};
 		} else {
-			return res.status(404).json({ message: "Không tìm thấy tướng để lưu." });
+			return res.status(404).json({ message: "Champion not found to save." });
 		}
 
 		try {
 			await fs.writeFile(filePath, JSON.stringify(championData, null, 2));
-			res.json({ message: "Dữ liệu đã được lưu thành công!" });
+			res.json({ message: "Data saved successfully!" });
 		} catch (error) {
-			console.error("Lỗi ghi file:", error.message);
-			res
-				.status(500)
-				.json({ message: `Lỗi khi lưu dữ liệu: ${error.message}` });
+			console.error("Error writing file:", error.message);
+			res.status(500).json({ message: `Error saving data: ${error.message}` });
 		}
 	});
 
-	// API để cập nhật lượt thích của tướng
+	// API to update champion likes
 	app.post("/api/like-champion", async (req, res) => {
 		const { championName, like } = req.body;
 
-		// Kiểm tra dữ liệu đầu vào
+		// Validate input data
 		if (!championName || !like) {
 			return res
 				.status(400)
-				.json({ message: "Thiếu championName hoặc like trong request body." });
+				.json({ message: "Missing championName or like in request body." });
 		}
 
-		// Kiểm tra định dạng của like
+		// Validate like format
 		if (
 			typeof like !== "object" ||
 			!like ||
@@ -143,7 +163,7 @@ const startServer = async () => {
 		) {
 			return res.status(400).json({
 				message:
-					"Dữ liệu like không hợp lệ. Phải là một object với các key set1 đến set6 và giá trị là số.",
+					"Invalid like data. Must be an object with keys set1 to set6 and numeric values.",
 			});
 		}
 
@@ -153,34 +173,34 @@ const startServer = async () => {
 		if (championIndex === -1) {
 			return res
 				.status(404)
-				.json({ message: "Không tìm thấy tướng để cập nhật lượt thích." });
+				.json({ message: "Champion not found to update likes." });
 		}
 
-		// Khởi tạo trường like nếu chưa tồn tại
+		// Initialize like field if it doesn't exist
 		if (!championData[championIndex].like) {
 			championData[championIndex].like = [];
 		}
 
-		// Cập nhật trường like
+		// Update like field
 		championData[championIndex].like = [like];
 
 		try {
 			await fs.writeFile(filePath, JSON.stringify(championData, null, 2));
-			res.json({ message: "Lượt thích đã được cập nhật thành công!" });
+			res.json({ message: "Likes updated successfully!" });
 		} catch (error) {
-			console.error("Lỗi ghi file:", error.message);
+			console.error("Error writing file:", error.message);
 			res
 				.status(500)
-				.json({ message: `Lỗi khi cập nhật lượt thích: ${error.message}` });
+				.json({ message: `Error updating likes: ${error.message}` });
 		}
 	});
 
-	// API để lấy dữ liệu của tất cả tướng
+	// API to get all champions data
 	app.get("/api/champions", (req, res) => {
 		res.json(championData);
 	});
 
-	// API để lấy dữ liệu của một tướng cụ thể
+	// API to get a specific champion's data
 	app.get("/api/get-champion/:name", (req, res) => {
 		const championName = req.params.name;
 		const champion = championData.find(champ => champ.name === championName);
@@ -188,26 +208,26 @@ const startServer = async () => {
 		if (champion) {
 			res.json(champion);
 		} else {
-			res.status(404).json({ message: `Không tìm thấy tướng ${championName}` });
+			res.status(404).json({ message: `Champion ${championName} not found` });
 		}
 	});
 
-	// API để lấy tất cả bình luận
+	// API to get all comments
 	app.get("/api/comments", async (req, res) => {
 		try {
 			const commentData = await fs.readFile(commentFilePath, "utf8");
 			res.json(JSON.parse(commentData));
 		} catch (error) {
-			console.error("Lỗi đọc commentUser.json:", error.message);
-			res.status(500).json({ message: "Lỗi khi tải bình luận" });
+			console.error("Error reading commentUser.json:", error.message);
+			res.status(500).json({ message: "Error loading comments" });
 		}
 	});
 
-	// API để thêm bình luận mới
+	// API to add a new comment
 	app.post("/api/comments", async (req, res) => {
 		const { userName, comment, championName } = req.body;
 		if (!userName || !comment || !championName) {
-			return res.status(400).json({ message: "Thiếu thông tin bình luận" });
+			return res.status(400).json({ message: "Missing comment information" });
 		}
 
 		try {
@@ -215,28 +235,29 @@ const startServer = async () => {
 			const comments = JSON.parse(commentData);
 			comments.push({ userName, comment, championName });
 			await fs.writeFile(commentFilePath, JSON.stringify(comments, null, 2));
-			res.json({ message: "Bình luận đã được lưu!" });
+			res.json({ message: "Comment saved successfully!" });
 		} catch (error) {
-			console.error("Lỗi lưu bình luận:", error.message);
-			res.status(500).json({ message: "Lỗi khi lưu bình luận" });
+			console.error("Error saving comment:", error.message);
+			res.status(500).json({ message: "Error saving comment" });
 		}
 	});
 
-	// Thêm route kiểm tra server
+	// Health check route
 	app.get("/api/health", (req, res) => {
 		res.json({
 			status: "Server is running",
 			timestamp: new Date().toISOString(),
+			port: port,
 		});
 	});
 
 	app.listen(port, () => {
-		console.log(`Backend đang chạy tại http://localhost:${port}`);
+		console.log(`Backend running at port ${port}`);
 	});
 };
 
-// Khởi động server
+// Start server
 startServer().catch(error => {
-	console.error("Không thể khởi động server:", error.message);
+	console.error("Failed to start server:", error.message);
 	process.exit(1);
 });
