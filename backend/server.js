@@ -32,18 +32,8 @@ app.use(
 app.use(express.json());
 
 // Define absolute paths to chamPOC.json and commentUser.json
-const dataDir = path.resolve(__dirname, "data");
-const filePath = path.join(dataDir, "chamPOC.json");
-const commentFilePath = path.join(dataDir, "commentUser.json");
-
-// Ensure data directory exists
-const ensureDataDirectory = async () => {
-	try {
-		await fs.mkdir(dataDir, { recursive: true });
-	} catch (error) {
-		console.error("Error creating data directory:", error.message);
-	}
-};
+const filePath = path.join(__dirname, "chamPOC.json");
+const commentFilePath = path.join(__dirname, "commentUser.json");
 
 // Read current data from chamPOC.json
 let championData;
@@ -306,7 +296,6 @@ app.get("/api/health", (req, res) => {
 
 // Start server after initializing data
 const startServer = async () => {
-	await ensureDataDirectory();
 	await initializeData();
 	await initializeCommentData();
 
