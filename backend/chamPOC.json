@@ -1,0 +1,3448 @@
+[
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU026.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU026T3-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Aatrox",
+		"defaultPowers": [
+			"Xiềng Xích Địa Ngục",
+			"Vũ Khí Tha Hóa",
+			"Xiềng Xích Địa Ngục II",
+			"Trang Bị Tận Răng",
+			"Dòng Chảy Năng Lượng",
+			"Darkin Thức Tỉnh"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05IO004.png?fe3e6",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05IO004T2-full.png?7eb24"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Ahri",
+		"defaultPowers": [
+			"Tinh Linh Phù Hộ",
+			"Lời Thì Thầm Từ Kiếp Trước",
+			"Tinh Linh Phù Hộ II",
+			"Khoan Đã!",
+			"Dòng Chảy Năng Lượng",
+			"Quà Chia Tay"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://dd.b.pvp.net/6_5_0/set4/vi_vn/img/cards/04SH130.png",
+				"fullAbsolutePath": "https://dd.b.pvp.net/6_5_0/set4/vi_vn/img/cards/04SH130T2-full.png"
+			}
+		],
+		"regions": ["Shurima"],
+		"regionRefs": ["Shurima"],
+		"name": "Akshan",
+		"defaultPowers": [
+			"Len Lén Báo Thù",
+			"Chức Trách Của Vệ Binh",
+			"Len Lén Báo Thù II",
+			"Đặc Ân Người Thợ",
+			"Dòng Chảy Năng Lượng",
+			"Giải Thoát"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98NX003.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98NX003T1-full.png"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Ambessa",
+		"defaultPowers": [
+			"Huấn Luyện Quân Đội ",
+			"Củng Cố Đội Hình",
+			"Huấn Luyện Quân Đội II",
+			"Đội Hình Phalanx",
+			"Dòng Chảy Năng Lượng",
+			"Tránh đường!"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06NX012.png?f72fc",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/thumb/06NX012T7-full.png/1920px-06NX012T7-full.png?bba56"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Annie",
+		"defaultPowers": [
+			"Hỏa Cuồng",
+			"Trò Đùa Tinh Nghịch",
+			"Hỏa Cuồng II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR038.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR038T2-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Ashe",
+		"defaultPowers": [
+			"Băng Tiễn",
+			"Thần Avarosa",
+			"Băng Tiễn II",
+			"Địa Hình Hiểm Trở",
+			"Dòng Chảy Năng Lượng",
+			"Món Quà Của Avarosa"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT087.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT087T1-full.png"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Aurelion Sol",
+		"defaultPowers": [
+			"Tinh Vân Rạng Ngời",
+			"Khởi Lập Vũ Trụ",
+			"Tinh Vân Rạng Ngời II",
+			"Hơi Thở Hỏa Tinh",
+			null,
+			null
+		],
+		"defaultRelicsSet1": [
+			"Găng Tinh Vân Sư",
+			"Đệ Tử Bóng Đêm",
+			"Lõi Công Nghệ Hoàn Hảo"
+		],
+		"defaultRelicsSet2": [
+			"Lõi Công Nghệ Hoàn Hảo",
+			"Hòa Khí Ma Pháp",
+			"Kế Đối Phó Của Đại Tướng"
+		],
+		"defaultRelicsSet3": [
+			"Lõi Công Nghệ Hoàn Hảo",
+			"Hòa Khí Ma Pháp",
+			"Đệ Tử Bóng Đêm"
+		],
+		"defaultRelicsSet4": [
+			"Găng Tinh Vân Sư",
+			"Lõi Công Nghệ Hoàn Hảo",
+			"Tả Xung Hữu Đột "
+		],
+		"defaultRelicsSet5": [
+			"Hộ Vệ Của Demacia",
+			"Găng Tinh Vân Sư",
+			"Di Sản Crownguard"
+		],
+		"defaultRelicsSet6": [
+			"Lưỡi Kiếm Cuồng Nộ",
+			"Kế Đối Phó Của Đại Tướng",
+			"Di Sản Crownguard"
+		],
+		"defaultAdventurePower": [
+			"Sản Phẩm Giả Mạo",
+			"Sự Cô Độc Ngọt Ngào",
+			"Vật Tế Thích Hợp",
+			"Giác Quan Hoang Dã",
+			"Cảm Hứng Dữ Dội",
+			null,
+			null,
+			null,
+			"Khổng Lồ Thức Tỉnh"
+		],
+		"defaultItems": [
+			"Hợp Âm Sức Mạnh",
+			"Poro Bông Mềm",
+			"Rìu Đen",
+			"Mỏ Năng Lượng",
+			"Găng Tay Băng Giá",
+			"Rìu Nhanh Nhẹn",
+			"Rựa Thợ Săn",
+			"Tinh Thể Tiêu Điểm",
+			"Mề Đay Nomad"
+		],
+		"note": "Có con rồng này thì làm gì cũng đúng",
+		"like": [
+			{
+				"set1": 2,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06RU001.png?bba73",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06RU001T4-full.png?8fefd"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Bard",
+		"defaultPowers": [
+			"Bụt Chúc Phúc",
+			"Tinh Vũ Hiện Diện",
+			"Bụt Chúc Phúc II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [
+			"Găng Tinh Vân Sư",
+			"Đệ Tử Bóng Đêm",
+			"Lõi Công Nghệ Hoàn Hảo"
+		],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Huấn Luyện Quân Đội II",
+			"Hỏa Thuật",
+			"Sản Phẩm Giả Mạo",
+			"Sự Cô Độc Ngọt Ngào",
+			"Ánh Sáng Cuối Cùng Của Icathia",
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [
+			"Hợp Âm Sức Mạnh",
+			"Poro Bông Mềm",
+			"Rìu Đen",
+			"Mỏ Năng Lượng",
+			"Găng Tay Băng Giá",
+			"Rìu Nhanh Nhẹn",
+			"Rựa Thợ Săn",
+			"Tinh Thể Tiêu Điểm",
+			"Mề Đay Nomad"
+		],
+		"note": "",
+		"like": [
+			{
+				"set1": 2,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05PZ006.png?90a4d",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/thumb/05PZ006T2-full.png/1920px-05PZ006T2-full.png?fcff0"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Caitlyn",
+		"defaultPowers": [
+			"Kẹt Trong Bẫy Sập",
+			"Nhập Cuộc Điều Tra",
+			"Kẹt Trong Bẫy Sập II",
+			"Sĩ Quan Yểm Trợ",
+			"Dòng Chảy Năng Lượng",
+			"Thiện Xạ"
+		],
+		"defaultRelicsSet1": [
+			"Găng Tinh Vân Sư",
+			"Đệ Tử Bóng Đêm",
+			"Lõi Công Nghệ Hoàn Hảo"
+		],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Huấn Luyện Quân Đội II",
+			"Hỏa Thuật",
+			"Sản Phẩm Giả Mạo",
+			"Sự Cô Độc Ngọt Ngào",
+			"Ánh Sáng Cuối Cùng Của Icathia",
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [
+			"Hợp Âm Sức Mạnh",
+			"Poro Bông Mềm",
+			"Rìu Đen",
+			"Mỏ Năng Lượng",
+			"Găng Tay Băng Giá",
+			"Rìu Nhanh Nhẹn",
+			"Rựa Thợ Săn",
+			"Tinh Thể Tiêu Điểm",
+			"Mề Đay Nomad"
+		],
+		"note": "",
+		"like": [
+			{
+				"set1": 2,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01NX038.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01NX038T2-full.png"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Darius",
+		"defaultPowers": [
+			"Sức Mạnh Noxus",
+			"Mở Đường",
+			"Sức Mạnh Noxus II",
+			"Khoan Đã!",
+			"Dòng Chảy Năng Lượng",
+			"Đại Tướng Noxus"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT056.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT056T1-full.png"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Diana",
+		"defaultPowers": [
+			"Lưỡi Kiếm Lưu Lạc",
+			"Vật Tế Hoàng Hôn",
+			"Lưỡi Kiếm Lưu Lạc II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04PZ001.png?c5df5",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04PZ001T3-full.png?139c3"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Ekko",
+		"defaultPowers": [
+			"Thực Tại Phân Tách",
+			"Động Cơ Z Cộng Hưởng",
+			"Thực Tại Phân Tách II",
+			"Pháp Thuật",
+			"Dòng Chảy Năng Lượng",
+			"Hỏa Lực Tương Lai"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08RU014.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08RU014-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Elder Dragon",
+		"defaultPowers": [
+			"Long Lực",
+			"Thượng Long",
+			"Long Lực II",
+			"Cú Mèo Bắt Sâu",
+			"Dòng Chảy Năng Lượng",
+			"Linh Hồn Rồng"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI053.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI053T2-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Elise",
+		"defaultPowers": [
+			"Nữ Hoàng Nhền Nhện",
+			"Kẹt Trong Tơ Nhện",
+			"Nữ Hoàng Nhền Nhện II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06RU025.png?95801",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06RU025T5-alt-full.png?20fb0"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Evelynn",
+		"defaultPowers": [
+			"Ngây Ngất Tột Đỉnh",
+			"Yêu Đến Thiên Thu",
+			"Ngây Ngất Tột Đỉnh II",
+			"Hạt Nấm Lùn ",
+			"Dòng Chảy Năng Lượng",
+			"Nụ Hôn Của Đêm"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98RU004.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98RU004T1-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Fiddlesticks",
+		"defaultPowers": [
+			"Không Chốn Dung Thân",
+			"Trong Gang Tấc",
+			"Không Chốn Dung Thân II",
+			"Bị cấm đánh",
+			"Dòng Chảy Năng Lượng",
+			"Bội Thu"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE012.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE012T1-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Garen",
+		"defaultPowers": [
+			"Sức Mạnh Demacia",
+			"Công Lý",
+			"Sức Mạnh Demacia II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05BC161.png?49ffc",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05BC161T1-full.png?cb101"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Freljord"],
+		"regionRefs": ["BandleCity", "Freljord"],
+		"name": "Gnar",
+		"defaultPowers": [
+			"Giận Hóa Rồ",
+			"Quái Thú Bên Trong",
+			"Giận Hóa Rồ II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06SI012.png?cf8f3",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06SI012T1-full.png?0bfd7"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Gwen",
+		"defaultPowers": [
+			"Bài Ca Cắt Xén",
+			"Xe Chỉ Luồn Kim",
+			"Bài Ca Cắt Xén II",
+			"Nghiền Nát",
+			"Dòng Chảy Năng Lượng",
+			"Điệu Nhảy Cuối"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ056.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ056T10-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Piltover & Zaun"],
+		"regionRefs": ["BandleCity", "PiltoverZaun"],
+		"name": "Heimerdinger",
+		"defaultPowers": [
+			"KHOA HỌC!",
+			"Theo Đuổi Tiến Trình",
+			"KHOA HỌC!!! II",
+			"Hạt Nấm Lùn ",
+			"Dòng Chảy Năng Lượng",
+			"Ah Đây Rồi!!!!"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06BW006.png?3991f",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06BW006T1-full.png?d4f10"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Illaoi",
+		"defaultPowers": [
+			"Tiên Tri Thượng Thần",
+			"Thử Thách Linh Hồn",
+			"Tiên Tri Thượng Thần II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/07BW002.png?23e00",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/07BW002T2-full.png?9b809"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Jack",
+		"defaultPowers": [
+			"Yếu Tố Quyết Định",
+			"Ngủ Với Lũ Cá",
+			"Yếu Tố Quyết Định II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08PZ001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08PZ001T3-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Janna",
+		"defaultPowers": ["Thổi Bay", "Mắt Bão", "Thổi Bay II", null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06RU008.png?88eba",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06RU008T7-full.png?ac406"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Jax",
+		"defaultPowers": [
+			"Ánh Sáng Cuối Cùng Của Icathia",
+			"Không Khoan Nhượng",
+			"Ánh Sáng Cuối Cùng Của Icathia II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05PZ022.png?ff89c",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05PZ022T1-full.png?b0feb"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Jayce",
+		"defaultPowers": [
+			"Tích Tụ",
+			"Trạng Thái Bất Ổn",
+			"Tích Tụ II",
+			"Trang Bị Đầy Đủ",
+			"Dòng Chảy Năng Lượng",
+			"Áp Dụng Công Nghệ Hextech"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://dd.b.pvp.net/6_5_0/set6/vi_vn/img/cards/06RU002.png",
+				"fullAbsolutePath": "https://dd.b.pvp.net/6_5_0/set6/vi_vn/img/cards/06RU002T1-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Jhin",
+		"defaultPowers": [
+			"Nét Đẹp Chết Chóc",
+			"Dàn Dựng Sân Khấu",
+			"Nét Đẹp Chết Chóc II",
+			"Hồi Kết Bùng Nổ",
+			"Dòng Chảy Năng Lượng",
+			"Chết Trong Bốn Hồi"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ040.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ040T1-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Jinx",
+		"defaultPowers": [
+			"Điều Tồi Tệ Nhất Có Thể Xảy Ra Là Gì Chứ?",
+			"San Bằng Tất Cả",
+			"Điều Tồi Tệ Nhất Có Thể Xảy Ra Là Gì Chứ? II",
+			"Pháp Thuật",
+			"Dòng Chảy Năng Lượng",
+			"Get Jinxed!"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06SH009.png?ff10a",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06SH009T2-full.png?ff10a"
+			}
+		],
+		"regions": ["Shurima"],
+		"regionRefs": ["Shurima"],
+		"name": "Kai'sa",
+		"defaultPowers": [
+			"Con Mồi Thành Kẻ Đi Săn",
+			"Chạm Vào Hư Không",
+			"Con Mồi Thành Kẻ Đi Săn II",
+			"Nộ Long Cước",
+			"Chạm Vào Hư Không II",
+			"Vận Dụng Hư Không"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06MT008.png?00f11",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/06MT008T2-full.png?9a96e"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Kayle",
+		"defaultPowers": [
+			"Sẻ Chia Phước Lành",
+			"Thần Thánh Can Thiệp",
+			"Sẻ Chia Phước Lành II",
+			"Lấy Mạng Chúng",
+			"Dòng Chảy Năng Lượng",
+			"Ngày Phán Quyết"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU005.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU005T2-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Kayn",
+		"defaultPowers": [
+			"Tinh Hoa Chết Chóc",
+			"Vật Chủ Phù Hợp",
+			"Tinh Hoa Chết Chóc II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/vi_vn/img/cards/04SI005.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/vi_vn/img/cards/04SI005T1-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Kindred",
+		"defaultPowers": [
+			"Cát Bụi Lại Trở Về Cát Bụi",
+			"Vòng Luân Hồi",
+			"Cát Bụi Lại Trở Về Cát Bụi II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04NX004.png?7f634",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04NX004T2-full.png?7f634"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Leblanc",
+		"defaultPowers": [
+			"Lừa Lọc Chí Tử",
+			"Vô Định, Vô Ngã",
+			"Lừa Lọc Chí Tử II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02IO006.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02IO006T1-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Lee Sin",
+		"defaultPowers": [
+			"Ý Chí Rồng Thiêng",
+			"Khai Mở Giác Quan",
+			"Ý Chí Rồng Thiêng II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT054.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03MT054T1-full.png"
+			}
+		],
+		"regions": ["Targon"],
+		"regionRefs": ["Targon"],
+		"name": "Leona",
+		"defaultPowers": [
+			"Năng Lượng Mặt Trời",
+			"Phần Thưởng Cho Kẻ Mộ Đạo",
+			"Năng Lượng Mặt Trời II",
+			"Đội Hình Phalanx",
+			"Dòng Chảy Năng Lượng",
+			"Thượng Nhân Mặt Trời"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09IO052.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09IO052T1-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Lillia",
+		"defaultPowers": [
+			"Giấc Mơ Ngọt Ngào",
+			"Quá Buồn Ngủ",
+			"Giấc Mơ Ngọt Ngào II",
+			"Nghiền Nát",
+			"Dòng Chảy Năng Lượng",
+			"Linh Hồn Dệt Mộng"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09DE034.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09DE034T1-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Lux: rạng ngời",
+		"defaultPowers": [
+			"Ánh Sáng Dẫn Lối Ta",
+			"Hiện Diện Truyền Cảm Hứng",
+			"Ánh Sáng Dẫn Lối Ta II",
+			"Nghiền Nát",
+			"Dòng Chảy Năng Lượng",
+			"Quý Cô Ánh Sáng"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE042.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01DE042T2-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Lux",
+		"defaultPowers": [
+			"Ánh Sáng Dẫn Lối",
+			"Cố Gắng Hết Mình",
+			"Ánh Sáng Dẫn Lối II",
+			"Hỏa Thuật",
+			"Dòng Chảy Năng Lượng",
+			"Tinh Vân Vĩnh Hằng"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06IO008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06IO008T1-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Master Yi",
+		"defaultPowers": [
+			"Tâm Hồn Và Thể Xác",
+			"Emai",
+			"Tâm Hồn Và Thể Xác II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW022.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW022T2-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Miss Fortune",
+		"defaultPowers": [
+			"Tất Tay Với Khỉ Đuôi Nổ",
+			"Truy Nã Đỏ",
+			"Tất Tay Với Khỉ Đuôi Nổ II",
+			"Thiên Tài Yipp",
+			"Dòng Chảy Năng Lượng",
+			"Xả Đạn"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08SI042.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08SI042T1-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm", "Noxus"],
+		"regionRefs": ["ShadowIsles", "Noxus"],
+		"name": "Mordekaiser",
+		"defaultPowers": [
+			"Hai Lần Tử",
+			"Ba Lần Sinh",
+			"Hai Lần Tử II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08MT003.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08MT003T4-full.png"
+			}
+		],
+		"regions": ["Targon", "Demacia"],
+		"regionRefs": ["Targon", "Demacia"],
+		"name": "Morgana",
+		"defaultPowers": [
+			"Đôi Cánh Trói Buộc",
+			"Tội Lỗi Nặng Nề",
+			"Đôi Cánh Trói Buộc II",
+			"Xả Phép Hàng Loạt",
+			"Dòng Chảy Năng Lượng",
+			"Chia Sẻ Đọa Đày"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/vi_vn/img/cards/05BW005.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/vi_vn/img/cards/05BW005T1-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Nami",
+		"defaultPowers": [
+			"Đón Nhận Thời Thế",
+			"Triệu Gọi Thủy Triều",
+			"Đón Nhận Thời Thế II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/vi_vn/img/cards/04SH047.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/vi_vn/img/cards/04SH047T2-full.png"
+			}
+		],
+		"regions": ["Shurima"],
+		"regionRefs": ["Shurima"],
+		"name": "Nasus",
+		"defaultPowers": [
+			"Ân Huệ Thể Thăng Hoa",
+			"Bảo Tồn Shurima",
+			"Ân Huệ Thể Thăng Hoa II",
+			"Trong tầm ngắm",
+			"Dòng Chảy Năng Lượng",
+			"Thu Hoạch Linh Hồn"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW053.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02BW053T1-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Nautilus",
+		"defaultPowers": [
+			"Tiếng Vọng Sâu Thẳm",
+			"Cuộc Hành Quân Bất Tận",
+			"Tiếng Vọng Sâu Thẳm II",
+			"Gia Cố",
+			"Dòng Chảy Năng Lượng",
+			"Thủy Triều Dâng"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU012.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU012T2-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Neeko",
+		"defaultPowers": [
+			"Tự Nhiên Dung Hòa",
+			"Đâu Phải Neeko",
+			"Tự Nhiên Dung Hòa II",
+			"Tập Đoàn Địa Trắc",
+			"Dòng Chảy Năng Lượng",
+			"Nổ Hoa!"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07SH013.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07SH013T4-full.png"
+			}
+		],
+		"regions": ["Shurima"],
+		"regionRefs": ["Shurima"],
+		"name": "Nidalee",
+		"defaultPowers": [
+			"Chọn Lọc Tự Nhiên",
+			"Trận Đấu Nguy Hiểm Nhất",
+			"Chọn Lọc Tự Nhiên II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08BW008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08BW008T1-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Nilah",
+		"defaultPowers": [
+			"Hiện Thân Của Niềm Vui",
+			"Tuần Hoàn Nước Bất Tận",
+			"Hiện Thân Của Niềm Vui II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06BC015.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06BC015T2-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle"],
+		"regionRefs": ["BandleCity"],
+		"name": "Norra",
+		"defaultPowers": [
+			"3 Viên Đường",
+			"Tìm Được Bạn Nè",
+			"6 Viên Đường",
+			"Vút!",
+			"Dòng Chảy Năng Lượng",
+			"Triệu Gọi Bất Ngờ"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06FR011.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06FR011T1-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Ornn",
+		"defaultPowers": [
+			"Sự Cô Độc Ngọt Ngào",
+			"Một Tay Ta Làm Nên",
+			"Sự Cô Độc Ngọt Ngào II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04BW005.png?4bea9",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04BW005T2-full.png?4bea9"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Pyke",
+		"defaultPowers": [
+			"Sức Mạnh Vực Thẳm",
+			"Lôi Ma",
+			"Sức Mạnh Vực Thẳm II",
+			"Chờ Đợi Thời Cơ",
+			"Dòng Chảy Năng Lượng",
+			"Cửa Tử Ở Mọi Phương"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU015.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_6_0/set7b/vi_vn/img/cards/07RU015T4-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Poro King",
+		"defaultPowers": [
+			"Hợp Lực Sẽ Mạnh Hơn",
+			"Phò Tá Đức Vua!",
+			"Hợp Lực Sẽ Mạnh Hơn II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/07NX007.png?09b1d",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/07NX007T1-full.png?09b1d"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Samira",
+		"defaultPowers": [
+			"Nhận Tiền Thưởng",
+			"Cho Chúng Hiểu",
+			"Nhận Tiền Thưởng II",
+			"Thỏa Thuận Chớp Nhoáng",
+			"Dòng Chảy Năng Lượng",
+			"Xinh Đẹp & Tàn Nhẫn"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/07IO011.png?a556a",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/07IO011T1-full.png?a556ad"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Sett",
+		"defaultPowers": [
+			"Hùng Hổ",
+			"Cược Vào Sett",
+			"Hùng Hổ II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02NX007.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02NX007T2-full.png"
+			}
+		],
+		"regions": ["Noxus"],
+		"regionRefs": ["Noxus"],
+		"name": "Swain",
+		"defaultPowers": [
+			"Nghiền Nát Kẻ Yếu ",
+			"Đạn Nổ Thần Công",
+			"Nghiền Nát Kẻ Yếu II",
+			"Tổ Đội Công Kích",
+			"Dòng Chảy Năng Lượng",
+			"Hóa Quỷ"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03BW004.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03BW004T3-full.png"
+			}
+		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Tahm Kench",
+		"defaultPowers": [
+			"Dã Tâm Trừng Phạt",
+			"Giao Kèo Dài Hạn",
+			"Dã Tâm Trừng Phạt II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/vi_vn/img/cards/04SH073.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/vi_vn/img/cards/04SH073T2-full.png"
+			}
+		],
+		"regions": ["Shurima"],
+		"regionRefs": ["Shurima"],
+		"name": "Taliyah",
+		"defaultPowers": [
+			"Chào Buổi Sáng, Đồ Cau Có",
+			"Đá Tái Chế",
+			"Chào Buổi Sáng, Đồ Cau Có II",
+			"Đá Dẻo",
+			"Dòng Chảy Năng Lượng",
+			"Ném Thêm Đá Tảng!"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01PZ008T2-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Piltover & Zaun"],
+		"regionRefs": ["BandleCity", "PiltoverZaun"],
+		"name": "Teemo",
+		"defaultPowers": [
+			"Trang Bị Đầy Đủ Và Sẵn Sàng",
+			"Nhanh Như Chớp",
+			"Trang Bị Đầy Đủ Và Sẵn Sàng II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": ["Linh Hồn Vang Vọng", "Cung Phong Linh", "Băng Cầu"],
+		"defaultRelicsSet2": ["Thiên Thần Hộ Mệnh", "Băng Cầu", "Băng Cầu"],
+		"defaultRelicsSet3": ["Linh Hồn Vang Vọng", "Băng Cầu", "Băng Cầu"],
+		"defaultRelicsSet4": ["Lời Thề Hộ Vệ", "Ngọc Tinh Tú", "Ngọc Tinh Tú"],
+		"defaultRelicsSet5": [
+			"Bản Mẫu Động Cơ Z",
+			"Bản Mẫu Động Cơ Z",
+			"Bản Mẫu Động Cơ Z"
+		],
+		"defaultRelicsSet6": [
+			"Búa Chiến Caulfield",
+			"Nhà Thông Thái Phá Thành",
+			"Nhà Thông Thái Phá Thành"
+		],
+		"defaultAdventurePower": [
+			"Ổn Định Đội Hình",
+			"Nhân Đôi",
+			"Thống Trị",
+			"Sát lực",
+			"Hoàn Hảo",
+			"Mệnh Lệnh Của Hoàng Đế",
+			"Cảm Hứng Dữ Dội",
+			"Xả Phép Hàng Loạt",
+			"Sản Phẩm Giả Mạo"
+		],
+		"defaultItems": [
+			"Nắm Đấm Hạng Nặng",
+			"Găng Tay Băng Giá",
+			"Rựa Thợ Săn",
+			"Vật Tổ Bóng Đêm",
+			"Búa Gỗ Tà Ác",
+			"Cờ Lệnh Tiến Công",
+			"Khiên Gắn Kết",
+			"Bất Tử",
+			"Bùa Canh Giữ"
+		],
+		"note": "Con này đánh bằng gài nấm độc, tấn công x2 nấm, rút bài. Tương tác tốt với băng cầu khi dùng được song kích, trinh sát, trăn trối tiến công. Sức mạnh ưu tiên ổn định đội hình.",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI052.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01SI052T1-full.png"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Thresh",
+		"defaultPowers": [
+			"Tận Hưởng Tiếng Hét",
+			"Ra Đây Chơi Đi",
+			"Tận Hưởng Tiếng Hét II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR039.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01FR039T2-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Tryndamere",
+		"defaultPowers": [
+			"Lời Thề Chiến Tướng",
+			"Say Máu",
+			"Lời Thề Chiến Tướng II",
+			"Địa Hình Hiểm Trở",
+			"Dòng Chảy Năng Lượng",
+			"Hiệp Ước Huyết Thống"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU009.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU009T6-full.png"
+			}
+		],
+		"regions": ["Runeterra"],
+		"regionRefs": ["Runeterra"],
+		"name": "Varus",
+		"defaultPowers": [
+			"Phước Lành Tàn Lụi",
+			"Món Quà Tai Ương",
+			"Phước Lành Tàn Lụi II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06DE021.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06DE021T1-full.png"
+			}
+		],
+		"regions": ["Demacia"],
+		"regionRefs": ["Demacia"],
+		"name": "Vayne",
+		"defaultPowers": [
+			"Cái này phải có tác dụng gì đó...",
+			"Thợ Săn Bóng Đêm",
+			"Cái Này Phải Có Tác Dụng Gì Đó... II",
+			"Trang Bị Tận Răng",
+			"Dòng Chảy Năng Lượng",
+			"Thanh Tẩy Bằng Bạc"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/vi_vn/img/cards/05BC093.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/vi_vn/img/cards/05BC093T2-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Quần Đảo Bóng Đêm"],
+		"regionRefs": ["BandleCity", "ShadowIsles"],
+		"name": "Veigar",
+		"defaultPowers": [
+			"Ta Là Ác Nhân",
+			"Bừng Bừng Sức Mạnh",
+			"Ta Là Ác Nhân II",
+			null,
+			null,
+			null
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09BC001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/5_4_0/set9/vi_vn/img/cards/09BC001T3-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Quần Đảo Bóng Đêm"],
+		"regionRefs": ["BandleCity", "ShadowIsles"],
+		"name": "Vex",
+		"defaultPowers": [null, null, null, null, null, null],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02PZ008.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set2/vi_vn/img/cards/02PZ008T2-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Vi",
+		"defaultPowers": [
+			"Đấm Không Thương Tiếc",
+			"Đệ Nhất Piltover",
+			"Đấm Không Thương Tiếc II",
+			"Nghiền Nát",
+			"Dòng Chảy Năng Lượng",
+			"Chúng Ta Thống Trị Phố Phường"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04SI055.png?64454",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/04SI055T2-full.png?64454"
+			}
+		],
+		"regions": ["Quần Đảo Bóng Đêm"],
+		"regionRefs": ["ShadowIsles"],
+		"name": "Viego",
+		"defaultPowers": [
+			"Bên Kia Màn Sương",
+			"Lãnh Thổ Sương Đen",
+			"Bên Kia Màn Sương II",
+			"Nghiền Nát",
+			"Dòng Chảy Năng Lượng",
+			"Tất Cả Phải Phục Tùng"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03PZ003.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set3/vi_vn/img/cards/03PZ003T1-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Viktor",
+		"defaultPowers": [
+			"Bước Nhảy Công Nghệ",
+			"Cuộc Hành Quân Của Máy Móc",
+			"Bước Nhảy Công Nghệ II",
+			"Hỏa Thuật",
+			"Dòng Chảy Năng Lượng",
+			"Năng Lượng Dâng Trào"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08FR001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set8/vi_vn/img/cards/08FR001T1-full.png"
+			}
+		],
+		"regions": ["Freljord"],
+		"regionRefs": ["Freljord"],
+		"name": "Volibear",
+		"defaultPowers": [
+			"Sấm Ngầm",
+			"Xé Toạc Bầu Trời",
+			"Sấm Ngầm II",
+			"Trong tầm ngắm",
+			"Dòng Chảy Năng Lượng",
+			"Tận Thế Cho Tất Cả"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98PZ001.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/tpoc/vi_vn/img/cards/98PZ001T2-full.png"
+			}
+		],
+		"regions": ["Piltover & Zaun"],
+		"regionRefs": ["PiltoverZaun"],
+		"name": "Warwick",
+		"defaultPowers": [
+			"Đói Khát",
+			"Gầm Thét",
+			"Đói Khát II",
+			"Con Mồi Bị Thương",
+			"Dòng Chảy Năng Lượng",
+			"Đói Khát III"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			"Chết Chóc",
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [
+			"Găng Tay Băng Giá",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01IO015.png",
+				"fullAbsolutePath": "http://dd.b.pvp.net/6_3_0/set1/vi_vn/img/cards/01IO015T1-full.png"
+			}
+		],
+		"regions": ["Ionia"],
+		"regionRefs": ["Ionia"],
+		"name": "Yasuo",
+		"defaultPowers": [
+			"Cuốn Theo Chiều Gió",
+			"Lưỡi Kiếm Sắc Bén",
+			"Cuốn Theo Chiều Gió II",
+			"Nộ Long Cước",
+			"Dòng Chảy Năng Lượng",
+			"Bão Tố"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05BC029.png",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/05BC029T5-full.png"
+			}
+		],
+		"regions": ["Thành Phố Bandle", "Targon"],
+		"regionRefs": ["BandleCity", "Targon"],
+		"name": "Yuumi",
+		"defaultPowers": [
+			"Chúng Ta Làm Được",
+			"Đông Đảo Bạn Bè",
+			"Chúng Ta Làm Được II",
+			"Đội Hình Phalanx",
+			"Dòng Chảy Năng Lượng",
+			"Sức Mạnh Tình Bạn!"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, null, null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [
+			"Nắm Đấm Hạng Nặng",
+			"Bất Tử",
+			"Giày Ninja",
+			"Búa Gỗ Tà Ác",
+			"Hợp Âm Sức Mạnh",
+			"Búa Vệ Thần",
+			"Bùa Canh Giữ",
+			"Long Nha",
+			"Đại Trượng"
+		],
+		"note": "",
+		"like": [
+			{
+				"set1": 0,
+				"set2": 0,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	}
+]
