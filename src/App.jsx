@@ -9,6 +9,9 @@ import { useState, useMemo, useCallback, useEffect } from "react";
 import { memo } from "react";
 import axios from "axios";
 
+// Định nghĩa URL backend
+const BASE_URL = "https://lorweb-4.onrender.com";
+
 // Định nghĩa các hằng số cho số lượng slot và loại item
 const SLOT_SIZES = {
 	relic: 3,
@@ -36,6 +39,21 @@ const RARITY_FILTERS = [
 
 // Giá trị mặc định cho lượt thích
 const defaultLikes = { set1: 0, set2: 0, set3: 0, set4: 0, set5: 0, set6: 0 };
+
+// Component hiển thị thông báo lỗi
+const ErrorMessage = ({ message, onClose }) => (
+	<div className='modal-overlay'>
+		<div className='modal-content'>
+			<h3>Lỗi</h3>
+			<p>{message}</p>
+			<div className='modal-buttons'>
+				<button className='modal-confirm-btn' onClick={onClose}>
+					Đóng
+				</button>
+			</div>
+		</div>
+	</div>
+);
 
 // Component hiển thị thẻ tướng riêng lẻ
 const ChampionCard = memo(({ champion, onSelectChampion }) => {
@@ -499,21 +517,25 @@ function App() {
 	const [itemRarityFilter, setItemRarityFilter] = useState("all");
 	const [regionFilter, setRegionFilter] = useState("all");
 	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState(null);
 
 	// Tải danh sách tướng từ API khi khởi động
 	useEffect(() => {
 		const loadChampionData = async () => {
+			setIsLoading(true);
 			try {
-				const response = await axios.get("http://localhost:5000/api/champions");
-				const data = response.data;
-				setChampionData(data);
-
-				if (data.length > 0 && !selectedChampion.name) {
-					setSelectedChampion(data[0]);
+				const response = await axios.get(`${BASE_URL}/api/champions`);
+				console.log("Champion data:", response.data); // Debug log
+				setChampionData(response.data);
+				if (response.data.length > 0 && !selectedChampion.name) {
+					setSelectedChampion(response.data[0]);
 				}
 			} catch (error) {
 				console.error("Lỗi tải danh sách tướng:", error);
-				alert("Không thể tải danh sách tướng. Vui lòng thử lại sau.");
+				setError("Không thể tải danh sách tướng. Vui lòng thử lại sau.");
+			} finally {
+				setIsLoading(false);
 			}
 		};
 
@@ -524,13 +546,13 @@ function App() {
 	useEffect(() => {
 		const loadChampionDetails = async () => {
 			if (!selectedChampion.name) return;
-
+			setIsLoading(true);
 			try {
 				const response = await axios.get(
-					`http://localhost:5000/api/get-champion/${selectedChampion.name}`
+					`${BASE_URL}/api/get-champion/${selectedChampion.name}`
 				);
+				console.log("Champion details:", response.data); // Debug log
 				const data = response.data;
-
 				if (data) {
 					const { relicSets, powerSlots, defaultPowerSlots, itemSlots } =
 						initializeChampionState(data);
@@ -548,7 +570,9 @@ function App() {
 				}
 			} catch (error) {
 				console.error("Lỗi tải chi tiết tướng:", error);
-				alert("Không thể tải chi tiết tướng. Vui lòng thử lại sau.");
+				setError("Không thể tải chi tiết tướng. Vui lòng thử lại sau.");
+			} finally {
+				setIsLoading(false);
 			}
 		};
 
@@ -559,13 +583,16 @@ function App() {
 	useEffect(() => {
 		const loadComments = async () => {
 			if (!selectedChampion.name) return;
-
+			setIsLoading(true);
 			try {
-				const response = await axios.get("http://localhost:5000/api/comments");
+				const response = await axios.get(`${BASE_URL}/api/comments`);
+				console.log("Comments:", response.data); // Debug log
 				setCommentData(response.data);
 			} catch (error) {
 				console.error("Lỗi tải bình luận:", error);
-				alert("Không thể tải bình luận. Vui lòng thử lại sau.");
+				setError("Không thể tải bình luận. Vui lòng thử lại sau.");
+			} finally {
+				setIsLoading(false);
 			}
 		};
 
@@ -625,7 +652,7 @@ function App() {
 	const handleLike = useCallback(
 		async setNumber => {
 			if (hasLiked) {
-				alert("Bạn đã nhấn thích rồi! Mỗi phiên chỉ được thích một lần.");
+				setError("Bạn đã nhấn thích rồi! Mỗi phiên chỉ được thích một lần.");
 				return;
 			}
 
@@ -638,14 +665,11 @@ function App() {
 			setHasLiked(true);
 
 			try {
-				const response = await axios.post(
-					"http://localhost:5000/api/like-champion",
-					{
-						championName: selectedChampion.name,
-						like: updatedLikes,
-					}
-				);
-
+				const response = await axios.post(`${BASE_URL}/api/like-champion`, {
+					championName: selectedChampion.name,
+					like: updatedLikes,
+				});
+				console.log("Like response:", response.data); // Debug log
 				localStorage.setItem(
 					"championConfig",
 					JSON.stringify({
@@ -654,12 +678,11 @@ function App() {
 						hasLiked: true,
 					})
 				);
-				alert(response.data.message);
 			} catch (error) {
 				setLikes(likes);
 				setHasLiked(false);
 				console.error("Lỗi khi lưu lượt thích:", error);
-				alert("Lỗi khi lưu lượt thích. Vui lòng thử lại sau.");
+				setError("Lỗi khi lưu lượt thích. Vui lòng thử lại sau.");
 			}
 		},
 		[hasLiked, likes, selectedChampion.name]
@@ -668,26 +691,26 @@ function App() {
 	// Xử lý thêm bình luận
 	const handleAddComment = useCallback(async () => {
 		if (!userName.trim() || !newComment.trim()) {
-			alert("Vui lòng nhập đầy đủ tên và bình luận!");
+			setError("Vui lòng nhập đầy đủ tên và bình luận!");
 			return;
 		}
 
 		try {
-			const response = await axios.post("http://localhost:5000/api/comments", {
+			const response = await axios.post(`${BASE_URL}/api/comments`, {
 				userName,
 				comment: newComment,
 				championName: selectedChampion.name,
 			});
+			console.log("Comment response:", response.data); // Debug log
 			setCommentData([
 				...commentData,
 				{ userName, comment: newComment, championName: selectedChampion.name },
 			]);
 			setUserName("");
 			setNewComment("");
-			alert(response.data.message);
 		} catch (error) {
 			console.error("Lỗi khi gửi bình luận:", error);
-			alert("Lỗi khi gửi bình luận. Vui lòng thử lại sau.");
+			setError("Lỗi khi gửi bình luận. Vui lòng thử lại sau.");
 		}
 	}, [userName, newComment, selectedChampion.name, commentData]);
 
@@ -883,27 +906,24 @@ function App() {
 		const formatSlots = slots => slots.map(slot => (slot ? slot.name : null));
 
 		try {
-			const response = await axios.post(
-				"http://localhost:5000/api/save-champion",
-				{
-					championName: selectedChampion.name,
-					defaultRelicsSet1: formatSlots(relicSets[1]),
-					defaultRelicsSet2: formatSlots(relicSets[2]),
-					defaultRelicsSet3: formatSlots(relicSets[3]),
-					defaultRelicsSet4: formatSlots(relicSets[4]),
-					defaultRelicsSet5: formatSlots(relicSets[5]),
-					defaultRelicsSet6: formatSlots(relicSets[6]),
-					defaultAdventurePower: formatSlots(powerSlots),
-					defaultPowers: formatSlots(defaultPowerSlots),
-					defaultItems: formatSlots(itemSlots),
-					note: notes[selectedChampion.name] || "",
-				}
-			);
-			alert(response.data.message);
+			const response = await axios.post(`${BASE_URL}/api/save-champion`, {
+				championName: selectedChampion.name,
+				defaultRelicsSet1: formatSlots(relicSets[1]),
+				defaultRelicsSet2: formatSlots(relicSets[2]),
+				defaultRelicsSet3: formatSlots(relicSets[3]),
+				defaultRelicsSet4: formatSlots(relicSets[4]),
+				defaultRelicsSet5: formatSlots(relicSets[5]),
+				defaultRelicsSet6: formatSlots(relicSets[6]),
+				defaultAdventurePower: formatSlots(powerSlots),
+				defaultPowers: formatSlots(defaultPowerSlots),
+				defaultItems: formatSlots(itemSlots),
+				note: notes[selectedChampion.name] || "",
+			});
+			console.log("Save response:", response.data); // Debug log
 			localStorage.setItem("championConfig", JSON.stringify(state));
 		} catch (error) {
 			console.error("Lỗi khi lưu dữ liệu:", error);
-			alert("Lỗi khi lưu dữ liệu. Vui lòng thử lại.");
+			setError("Lỗi khi lưu dữ liệu. Vui lòng thử lại.");
 		} finally {
 			setIsConfirmModalOpen(false);
 		}
@@ -930,11 +950,19 @@ function App() {
 
 	return (
 		<>
+			{error && <ErrorMessage message={error} onClose={() => setError(null)} />}
 			<div id='Screen'>
 				<div className='CanhBao'>
 					Tui không biết FIX BUG đâu nên xin đừng phá!
 				</div>
 				<div id='mainView'>
+					{isLoading && (
+						<div className='modal-overlay'>
+							<div className='modal-content'>
+								<h3>Đang tải...</h3>
+							</div>
+						</div>
+					)}
 					<img
 						loading='lazy'
 						id='selectChamp'
