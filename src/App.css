@@ -804,64 +804,9 @@
 .item-list img {
 	touch-action: manipulation; /* Ngăn zoom khi chạm */
 }
-/* Responsive design */
-
-/* Tablet and larger screens (min-width: 679px) */
-@media (min-width: 679px) {
-	#relic-sets {
-		position: absolute;
-		top: 80px;
-		left: 340px;
-		max-width: 650px;
-		flex-direction: row;
-	}
-
-	#power-set {
-		position: absolute;
-		top: 80px;
-		left: 1020px;
-		max-width: 320px;
-	}
-
-	#item-set {
-		position: absolute;
-		top: 465px;
-		left: 1020px;
-		max-width: 320px;
-	}
-
-	#default-powers {
-		position: absolute;
-		top: 465px;
-		left: 340px;
-		width: 645px;
-	}
-
-	#note-set {
-		position: absolute;
-		top: 630px;
-		left: 340px;
-	}
-
-	#comment-set {
-		position: absolute;
-		top: 465px;
-		right: 20px;
-		width: 400px;
-	}
-
-	.open-default-power-panel,
-	.open-relic-panel,
-	.open-power-panel,
-	.open-item-panel,
-	.open-champion-panel,
-	.save-defaults-btn {
-		position: absolute;
-	}
-}
 
 /* Mobile devices (max-width: 678px) */
-@media (max-width: 678px) {
+@media (max-width: 1000px) {
 	:root {
 		--slot-size: 60px;
 		--delete-btn-size: 12px;
@@ -951,6 +896,339 @@
 		font-size: 8px;
 	}
 
+	.open-relic-panel {
+		right: 20px;
+		top: 80px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-power-panel {
+		right: 230px;
+		top: 80px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-default-power-panel {
+		right: 20px;
+		top: 140px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-item-panel {
+		right: 230px;
+		top: 140px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-champion-panel {
+		right: 20px;
+		top: 200px;
+		height: 50px;
+		width: 20%;
+	}
+	.save-defaults-btn {
+		right: 230px;
+		top: 200px;
+		height: 50px;
+		width: 20%;
+	}
+	.relic-set,
+	.power-set,
+	.item-set,
+	.default-power-set,
+	.note-set,
+	.comment-set {
+		width: 100%;
+	}
+
+	.note-content,
+	.comment-content {
+		width: 100%;
+	}
+
+	.relic-set h2,
+	.power-set h2,
+	.item-set h2,
+	.default-power-set h2,
+	.note-set h2,
+	.comment-set h2 {
+		font-size: 18px;
+	}
+
+	.note-content {
+		height: 120px;
+	}
+
+	.note-textarea {
+		font-size: 14px;
+	}
+
+	.comment-content {
+		height: 80px;
+	}
+
+	.comment-textarea {
+		height: 50px;
+		font-size: 12px;
+	}
+
+	.comment-input {
+		font-size: 12px;
+	}
+
+	.comment-item {
+		font-size: 12px;
+	}
+
+	.comment-form {
+		width: 100%;
+	}
+
+	.comment-submit-btn {
+		padding: 8px;
+		font-size: 14px;
+	}
+
+	.relic-slot,
+	.power-slot,
+	.item-slot {
+		width: var(--slot-size);
+		height: var(--slot-size);
+	}
+
+	.iconRelic,
+	.iconPower,
+	.iconItem {
+		width: var(--slot-size);
+		height: var(--slot-size);
+	}
+
+	.tooltip {
+		width: 120px;
+		height: 120px;
+		top: 80px;
+		left: 10px;
+	}
+
+	.relic-panel,
+	.power-panel,
+	.item-panel,
+	.champion-panel {
+		width: 95%;
+		height: 90%;
+	}
+
+	.item-list-item {
+		width: var(--slot-size);
+		height: var(--slot-size);
+	}
+
+	.champion-list-item {
+		width: 100px;
+		height: 140px;
+	}
+
+	.relic-set {
+		width: 100%;
+	}
+
+	.like-relic-btn {
+		width: 80px;
+		height: 30px;
+		padding: 4px 8px;
+		font-size: 12px;
+	}
+
+	.CanhBao {
+		font-size: 10px;
+		top: 5px;
+		right: 20px;
+		padding: 4px;
+		width: 200px;
+	}
+	.champion-panel-content {
+		position: relative;
+		width: 95px;
+		padding: 0px;
+	}
+	.relic-panel-content,
+	.power-panel-content,
+	.item-panel-content {
+		position: relative;
+		width: 130px;
+		padding: 0px;
+	}
+
+	.champion-panel {
+		position: fixed;
+		top: 20px;
+		right: calc(-1 * var(--panel-width));
+		width: 95px;
+		height: 95%;
+		background-color: #222222b6;
+		z-index: 50;
+		transition: right 0.3s ease-in-out;
+		border-radius: 21px;
+	}
+	.relic-panel,
+	.power-panel,
+	.item-panel {
+		position: fixed;
+		top: 20px;
+		right: calc(-1 * var(--panel-width));
+		width: 120px;
+		height: 95%;
+		background-color: #222222b6;
+		z-index: 50;
+		transition: right 0.3s ease-in-out;
+		border-radius: 21px;
+	}
+	.modal-content {
+		width: 300px;
+		padding: 15px;
+	}
+
+	.modal-content h3 {
+		font-size: 20px;
+	}
+
+	.modal-content p {
+		font-size: 14px;
+	}
+
+	.modal-confirm-btn,
+	.modal-cancel-btn {
+		padding: 8px 15px;
+		font-size: 14px;
+	}
+}
+/* Mobile devices (max-width: 678px) */
+@media (max-width: 550px) {
+	:root {
+		--slot-size: 60px;
+		--delete-btn-size: 12px;
+		--panel-width: 90%;
+	}
+
+	#mainView {
+		min-height: 100vh;
+		display: grid;
+		grid-template-rows: auto auto auto auto auto auto auto auto;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"control-buttons"
+			"champion"
+			"relics"
+			"power"
+			"items"
+			"default-powers"
+			"notes"
+			"comments";
+		gap: 15px;
+		padding: 0px;
+		margin: 0px;
+	}
+	#picChamp {
+		top: 10px;
+	}
+	.CanhBao {
+		width: 240px;
+	}
+	.control-buttons {
+		grid-area: control-buttons;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	#picChamp {
+		grid-area: champion;
+		width: 180px;
+		position: relative;
+	}
+
+	#relic-sets {
+		grid-area: relics;
+		max-width: 95%;
+		flex-direction: column;
+	}
+
+	#power-set {
+		grid-area: power;
+		max-width: 95%;
+	}
+
+	#item-set {
+		grid-area: items;
+		max-width: 95%;
+	}
+
+	#default-powers {
+		grid-area: default-powers;
+		max-width: 95%;
+		width: auto;
+	}
+
+	#note-set {
+		grid-area: notes;
+		max-width: 95%;
+		width: auto;
+	}
+
+	#comment-set {
+		grid-area: comments;
+		max-width: 95%;
+		width: auto;
+	}
+	.open-default-power-panel,
+	.open-relic-panel,
+	.open-power-panel,
+	.open-item-panel,
+	.open-champion-panel,
+	.save-defaults-btn {
+		position: absolute;
+		width: 100%;
+		max-width: 200px;
+		margin: 5px 0;
+		font-size: 8px;
+	}
+
+	.open-relic-panel {
+		right: 20px;
+		top: 80px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-power-panel {
+		right: 140px;
+		top: 80px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-default-power-panel {
+		right: 20px;
+		top: 140px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-item-panel {
+		right: 140px;
+		top: 140px;
+		height: 50px;
+		width: 20%;
+	}
+	.open-champion-panel {
+		right: 20px;
+		top: 200px;
+		height: 50px;
+		width: 20%;
+	}
+	.save-defaults-btn {
+		right: 140px;
+		top: 200px;
+		height: 50px;
+		width: 20%;
+	}
 	.relic-set,
 	.power-set,
 	.item-set,
@@ -1243,29 +1521,35 @@
 	.open-relic-panel {
 		top: 40px;
 		left: 110px;
+		height: 30px;
 	}
 	.open-power-panel {
 		top: 40px;
 		left: 220px;
 		width: 120px;
+		height: 30px;
 	}
 	.open-item-panel {
 		top: 75px;
 		left: 110px;
+		height: 30px;
 	}
 	.open-default-power-panel {
 		top: 75px;
 		left: 220px;
 		width: 120px;
+		height: 30px;
 	}
 	.open-champion-panel {
 		top: 110px;
 		left: 110px;
+		height: 30px;
 	}
 	.save-defaults-btn {
 		top: 110px;
 		left: 220px;
 		width: 120px;
+		height: 30px;
 		height: 30px;
 	}
 
