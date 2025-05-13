@@ -52,48 +52,163 @@ app.use(express.json());
 const filePath = path.join(__dirname, "chamPOC.json");
 const commentFilePath = path.join(__dirname, "commentUser.json");
 
-// Đọc dữ liệu hiện tại từ chamPOC.json
-let championData;
+// Khai báo biến toàn cục
+let championData = [];
+let commentData = [];
+
+// Hàm khởi tạo dữ liệu champion từ DynamoDB
 const initializeData = async () => {
 	try {
-		const fileExists = await fs
-			.access(filePath)
-			.then(() => true)
-			.catch(() => false);
-		if (fileExists) {
-			const data = await fs.readFile(filePath, "utf8");
-			championData = JSON.parse(data);
+		// Thử lấy dữ liệu từ DynamoDB
+		console.log("Đang lấy dữ liệu champion từ DynamoDB...");
+		const params = { TableName: "champion" };
+		const command = new ScanCommand(params);
+		const response = await dynamoDBClient.send(command);
+
+		if (response.Items && response.Items.length > 0) {
+			championData = response.Items.map(item => ({
+				name: item.name?.S || "",
+				assets:
+					item.assets?.L?.map(asset => ({
+						gameAbsolutePath: asset.M?.gameAbsolutePath?.S || "",
+						fullAbsolutePath: asset.M?.fullAbsolutePath?.S || "",
+					})) || [],
+				regions: item.regions?.SS || [],
+				regionRefs: item.regionRefs?.SS || [],
+				defaultPowers: item.defaultPowers?.L?.map(power => power.S || "") || [],
+				defaultRelicsSet1:
+					item.defaultRelicsSet1?.L?.map(relic => relic.S || "") || [],
+				defaultRelicsSet2:
+					item.defaultRelicsSet2?.L?.map(relic => relic.S || "") || [],
+				defaultRelicsSet3:
+					item.defaultRelicsSet3?.L?.map(relic => relic.S || "") || [],
+				defaultRelicsSet4:
+					item.defaultRelicsSet4?.L?.map(relic => relic.S || "") || [],
+				defaultRelicsSet5:
+					item.defaultRelicsSet5?.L?.map(relic => relic.S || "") || [],
+				defaultRelicsSet6:
+					item.defaultRelicsSet6?.L?.map(relic => relic.S || "") || [],
+				defaultAdventurePower:
+					item.defaultAdventurePower?.L?.map(power => power.S || "") || [],
+				defaultItems: item.defaultItems?.L?.map(item => item.S || "") || [],
+				note: item.note?.S || "",
+				like:
+					item.like?.L?.map(like => ({
+						set1: parseInt(like.M?.set1?.N || "0"),
+						set2: parseInt(like.M?.set2?.N || "0"),
+						set3: parseInt(like.M?.set3?.N || "0"),
+						set4: parseInt(like.M?.set4?.N || "0"),
+						set5: parseInt(like.M?.set5?.N || "0"),
+						set6: parseInt(like.M?.set6?.N || "0"),
+					})) || [],
+			}));
+			console.log(`Đã lấy ${championData.length} champion từ DynamoDB`);
+
+			// Lưu vào chamPOC.json để đồng bộ cục bộ
+			await fs.writeFile(filePath, JSON.stringify(championData, null, 2));
+			console.log("Đã cập nhật chamPOC.json với dữ liệu từ DynamoDB");
 		} else {
-			championData = [];
-			await fs.writeFile(filePath, "[]");
-			console.log("Đã tạo file chamPOC.json mới tại:", filePath);
+			console.log("Bảng champion trống, thử đọc từ chamPOC.json...");
+			const fileExists = await fs
+				.access(filePath)
+				.then(() => true)
+				.catch(() => false);
+			if (fileExists) {
+				const data = await fs.readFile(filePath, "utf8");
+				championData = JSON.parse(data);
+				console.log(`Đã đọc ${championData.length} champion từ chamPOC.json`);
+			} else {
+				championData = [];
+				await fs.writeFile(filePath, "[]");
+				console.log("Đã tạo file chamPOC.json mới");
+			}
 		}
 	} catch (error) {
-		console.error("Lỗi khi khởi tạo dữ liệu:", error.message);
-		championData = [];
+		console.error("Lỗi khi lấy dữ liệu champion từ DynamoDB:", error.message);
+		// Dự phòng: đọc từ chamPOC.json
 		try {
-			await fs.writeFile(filePath, "[]");
-			console.log("Đã tạo file chamPOC.json mới do lỗi đọc:", error.message);
-		} catch (writeError) {
-			console.error("Lỗi khi tạo chamPOC.json:", writeError.message);
-			console.warn("Tiếp tục khởi động server với dữ liệu rỗng.");
+			const fileExists = await fs
+				.access(filePath)
+				.then(() => true)
+				.catch(() => false);
+			if (fileExists) {
+				const data = await fs.readFile(filePath, "utf8");
+				championData = JSON.parse(data);
+				console.log(`Đã đọc ${championData.length} champion từ chamPOC.json`);
+			} else {
+				championData = [];
+				await fs.writeFile(filePath, "[]");
+				console.log("Đã tạo file chamPOC.json mới do lỗi DynamoDB");
+			}
+		} catch (fileError) {
+			console.error("Lỗi khi đọc/tạo chamPOC.json:", fileError.message);
+			championData = [];
 		}
 	}
 };
 
-// Khởi tạo commentUser.json nếu chưa tồn tại
+// Hàm khởi tạo dữ liệu bình luận từ DynamoDB
 const initializeCommentData = async () => {
 	try {
-		const fileExists = await fs
-			.access(commentFilePath)
-			.then(() => true)
-			.catch(() => false);
-		if (!fileExists) {
-			await fs.writeFile(commentFilePath, "[]");
-			console.log("Đã tạo file commentUser.json mới tại:", commentFilePath);
+		// Thử lấy dữ liệu từ DynamoDB
+		console.log("Đang lấy dữ liệu bình luận từ DynamoDB...");
+		const params = { TableName: "comments" };
+		const command = new ScanCommand(params);
+		const response = await dynamoDBClient.send(command);
+
+		if (response.Items && response.Items.length > 0) {
+			commentData = response.Items.map(item => ({
+				commentId: item.commentId?.S || "",
+				userName: item.userName?.S || "",
+				comment: item.comment?.S || "",
+				championName: item.championName?.S || "",
+			}));
+			console.log(`Đã lấy ${commentData.length} bình luận từ DynamoDB`);
+
+			// Lưu vào commentUser.json để đồng bộ cục bộ
+			await fs.writeFile(commentFilePath, JSON.stringify(commentData, null, 2));
+			console.log("Đã cập nhật commentUser.json với dữ liệu từ DynamoDB");
+		} else {
+			console.log("Bảng comments trống, thử đọc từ commentUser.json...");
+			const fileExists = await fs
+				.access(commentFilePath)
+				.then(() => true)
+				.catch(() => false);
+			if (fileExists) {
+				const data = await fs.readFile(commentFilePath, "utf8");
+				commentData = JSON.parse(data);
+				console.log(
+					`Đã đọc ${commentData.length} bình luận từ commentUser.json`
+				);
+			} else {
+				commentData = [];
+				await fs.writeFile(commentFilePath, "[]");
+				console.log("Đã tạo file commentUser.json mới");
+			}
 		}
 	} catch (error) {
-		console.error("Lỗi khi khởi tạo commentUser.json:", error.message);
+		console.error("Lỗi khi lấy dữ liệu bình luận từ DynamoDB:", error.message);
+		// Dự phòng: đọc từ commentUser.json
+		try {
+			const fileExists = await fs
+				.access(commentFilePath)
+				.then(() => true)
+				.catch(() => false);
+			if (fileExists) {
+				const data = await fs.readFile(commentFilePath, "utf8");
+				commentData = JSON.parse(data);
+				console.log(
+					`Đã đọc ${commentData.length} bình luận từ commentUser.json`
+				);
+			} else {
+				commentData = [];
+				await fs.writeFile(commentFilePath, "[]");
+				console.log("Đã tạo file commentUser.json mới do lỗi DynamoDB");
+			}
+		} catch (fileError) {
+			console.error("Lỗi khi đọc/tạo commentUser.json:", fileError.message);
+			commentData = [];
+		}
 	}
 };
 
@@ -121,12 +236,15 @@ app.post("/api/save-champion", async (req, res) => {
 		note,
 	} = req.body;
 
+	console.log("Received save-champion request:", { championName });
+
 	// Xác thực đầu vào
 	if (
 		!championName ||
 		typeof championName !== "string" ||
 		championName.length > 50
 	) {
+		console.log("Invalid championName:", championName);
 		return res.status(400).json({
 			message: "Tên champion không hợp lệ. Phải là chuỗi không rỗng.",
 		});
@@ -137,6 +255,7 @@ app.post("/api/save-champion", async (req, res) => {
 		champ => champ.name === championName
 	);
 	if (championIndex === -1) {
+		console.log("Champion not found:", championName);
 		return res.status(404).json({ message: "Không tìm thấy champion để lưu." });
 	}
 
@@ -244,6 +363,7 @@ app.post("/api/save-champion", async (req, res) => {
 
 	try {
 		// Lưu vào DynamoDB
+		console.log("Saving to DynamoDB...");
 		const putCommand = new PutItemCommand({
 			TableName: "champion",
 			Item: dynamoItem,
@@ -257,7 +377,7 @@ app.post("/api/save-champion", async (req, res) => {
 
 		res.json({ message: "Dữ liệu đã được lưu thành công!" });
 	} catch (error) {
-		console.error("Lỗi khi lưu dữ liệu:", error.message);
+		console.error("Lỗi khi lưu dữ liệu:", error.stack);
 		res.status(500).json({ message: `Lỗi khi lưu dữ liệu: ${error.message}` });
 	}
 });
@@ -390,7 +510,7 @@ app.post("/api/like-champion", async (req, res) => {
 
 		res.json({ message: "Lượt thích đã được cập nhật thành công!" });
 	} catch (error) {
-		console.error("Lỗi khi cập nhật lượt thích:", error.message);
+		console.error("Lỗi khi cập nhật lượt thích:", error.stack);
 		res
 			.status(500)
 			.json({ message: `Lỗi khi cập nhật lượt thích: ${error.message}` });
@@ -437,11 +557,10 @@ app.get("/api/get-champion/:name", (req, res) => {
 // API để lấy tất cả bình luận
 app.get("/api/comments", async (req, res) => {
 	try {
-		const commentData = await fs.readFile(commentFilePath, "utf8");
 		console.log("Đã lấy tất cả bình luận từ nguồn gốc:", req.headers.origin);
-		res.json(JSON.parse(commentData));
+		res.json(commentData);
 	} catch (error) {
-		console.error("Lỗi khi đọc commentUser.json:", error.message);
+		console.error("Lỗi khi lấy bình luận:", error.message);
 		res.status(500).json({ message: "Lỗi khi tải bình luận" });
 	}
 });
@@ -467,15 +586,44 @@ app.post("/api/comments", async (req, res) => {
 		});
 	}
 
+	const newComment = {
+		commentId: uuidv4(),
+		userName,
+		comment,
+		championName,
+	};
+
+	// Cập nhật commentData
+	commentData.push(newComment);
+
+	// Chuẩn bị dữ liệu cho DynamoDB
+	const dynamoItem = {
+		commentId: { S: newComment.commentId },
+		userName: { S: userName },
+		comment: { S: comment },
+		championName: { S: championName },
+	};
+
 	try {
-		const commentData = await fs.readFile(commentFilePath, "utf8");
-		const comments = JSON.parse(commentData);
-		comments.push({ userName, comment, championName });
-		await fs.writeFile(commentFilePath, JSON.stringify(comments, null, 2));
-		console.log(`Đã thêm bình luận cho ${championName} bởi ${userName}`);
+		// Lưu vào DynamoDB
+		const putCommand = new PutItemCommand({
+			TableName: "comments",
+			Item: dynamoItem,
+		});
+		await dynamoDBClient.send(putCommand);
+		console.log(
+			`Đã lưu bình luận cho ${championName} bởi ${userName} vào DynamoDB`
+		);
+
+		// Lưu vào commentUser.json
+		await fs.writeFile(commentFilePath, JSON.stringify(commentData, null, 2));
+		console.log(
+			`Đã lưu bình luận cho ${championName} bởi ${userName} vào commentUser.json`
+		);
+
 		res.json({ message: "Bình luận đã được lưu thành công!" });
 	} catch (error) {
-		console.error("Lỗi khi lưu bình luận:", error.message);
+		console.error("Lỗi khi lưu bình luận:", error.stack);
 		res.status(500).json({ message: "Lỗi khi lưu bình luận" });
 	}
 });
@@ -598,7 +746,7 @@ app.post("/api/upload-to-dynamodb", async (req, res) => {
 
 		res.json({ message: "Dữ liệu đã được đẩy lên DynamoDB thành công" });
 	} catch (error) {
-		console.error("Lỗi khi đẩy lên DynamoDB:", error.message);
+		console.error("Lỗi khi đẩy lên DynamoDB:", error.stack);
 		res.status(500).json({ message: `Lỗi khi đẩy dữ liệu: ${error.message}` });
 	}
 });
@@ -657,7 +805,7 @@ app.get("/api/check-dynamodb", async (req, res) => {
 			items: items,
 		});
 	} catch (error) {
-		console.error("Lỗi khi kiểm tra bảng DynamoDB:", error.message);
+		console.error("Lỗi khi kiểm tra bảng DynamoDB:", error.stack);
 		res
 			.status(500)
 			.json({ message: `Lỗi khi kiểm tra dữ liệu: ${error.message}` });
@@ -687,7 +835,7 @@ app.post("/api/upload-comments-to-dynamodb", async (req, res) => {
 			const putRequests = batch.map(comment => ({
 				PutRequest: {
 					Item: {
-						commentId: { S: uuidv4() },
+						commentId: { S: comment.commentId || uuidv4() },
 						userName: { S: comment.userName || "" },
 						comment: { S: comment.comment || "" },
 						championName: { S: comment.championName || "" },
@@ -728,7 +876,7 @@ app.post("/api/upload-comments-to-dynamodb", async (req, res) => {
 
 		res.json({ message: "Bình luận đã được đẩy lên DynamoDB thành công" });
 	} catch (error) {
-		console.error("Lỗi chi tiết khi đẩy bình luận lên DynamoDB:", error);
+		console.error("Lỗi chi tiết khi đẩy bình luận lên DynamoDB:", error.stack);
 		res
 			.status(500)
 			.json({ message: `Lỗi khi đẩy bình luận: ${error.message}` });
@@ -747,6 +895,6 @@ const startServer = async () => {
 
 // Khởi động server
 startServer().catch(error => {
-	console.error("Không thể khởi động server:", error.message);
+	console.error("Không thể khởi động server:", error.stack);
 	process.exit(1);
 });
