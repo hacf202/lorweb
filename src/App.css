@@ -804,9 +804,62 @@
 .item-list img {
 	touch-action: manipulation; /* Ngăn zoom khi chạm */
 }
+/* Tablet and larger screens (min-width: 679px) */
+@media (min-width: 1790px) {
+	#relic-sets {
+		position: absolute;
+		top: 80px;
+		left: 340px;
+		max-width: 650px;
+		flex-direction: row;
+	}
 
-/* Mobile devices (max-width: 678px) */
-@media (max-width: 1000px) {
+	#power-set {
+		position: absolute;
+		top: 80px;
+		left: 1020px;
+		max-width: 320px;
+	}
+
+	#item-set {
+		position: absolute;
+		top: 465px;
+		left: 1020px;
+		max-width: 320px;
+	}
+
+	#default-powers {
+		position: absolute;
+		top: 465px;
+		left: 340px;
+		width: 645px;
+	}
+
+	#note-set {
+		position: absolute;
+		top: 630px;
+		left: 340px;
+	}
+
+	#comment-set {
+		position: absolute;
+		top: 465px;
+		right: 20px;
+		width: 400px;
+	}
+
+	.open-default-power-panel,
+	.open-relic-panel,
+	.open-power-panel,
+	.open-item-panel,
+	.open-champion-panel,
+	.save-defaults-btn {
+		position: absolute;
+	}
+}
+
+/* Mobile devices (max-width: 1000px) */
+@media (max-width: 1789px) {
 	:root {
 		--slot-size: 60px;
 		--delete-btn-size: 12px;
@@ -1102,7 +1155,7 @@
 		font-size: 14px;
 	}
 }
-/* Mobile devices (max-width: 678px) */
+/* Mobile devices (max-width: 550px) */
 @media (max-width: 550px) {
 	:root {
 		--slot-size: 60px;
