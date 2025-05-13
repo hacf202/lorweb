@@ -11,7 +11,6 @@ import axios from "axios";
 
 // Định nghĩa URL backend
 const BASE_URL = "https://lorweb-4.onrender.com";
-// const BASE_URL = "./chamPOC.json";
 
 // Định nghĩa các hằng số cho số lượng slot và loại item
 const SLOT_SIZES = {
@@ -1039,6 +1038,12 @@ function App() {
 
 	// Xử lý xác nhận lưu
 	const handleConfirmSave = useCallback(async () => {
+		if (!selectedChampion.name) {
+			setError("Vui lòng chọn một tướng trước khi lưu!");
+			setIsConfirmModalOpen(false);
+			return;
+		}
+
 		const state = {
 			selectedChampion,
 			relicSets,
@@ -1049,8 +1054,11 @@ function App() {
 			likes,
 			hasLiked,
 		};
-		const formatSlots = slots => slots.map(slot => (slot ? slot.name : null));
 
+		const formatSlots = slots =>
+			slots.map(slot => (slot && slot.name ? slot.name : ""));
+
+		setIsLoading(true);
 		try {
 			const _ = await axios.post(`${BASE_URL}/api/save-champion`, {
 				championName: selectedChampion.name,
@@ -1065,10 +1073,35 @@ function App() {
 				defaultItems: formatSlots(itemSlots),
 				note: notes[selectedChampion.name] || "",
 			});
+
+			// Cập nhật trạng thái cục bộ với dữ liệu mới
+			const updatedChampion = {
+				...selectedChampion,
+				defaultRelicsSet1: formatSlots(relicSets[1]),
+				defaultRelicsSet2: formatSlots(relicSets[2]),
+				defaultRelicsSet3: formatSlots(relicSets[3]),
+				defaultRelicsSet4: formatSlots(relicSets[4]),
+				defaultRelicsSet5: formatSlots(relicSets[5]),
+				defaultRelicsSet6: formatSlots(relicSets[6]),
+				defaultAdventurePower: formatSlots(powerSlots),
+				defaultPowers: formatSlots(defaultPowerSlots),
+				defaultItems: formatSlots(itemSlots),
+				note: notes[selectedChampion.name] || "",
+				like: [likes],
+			};
+
+			setChampionData(prev =>
+				prev.map(champ =>
+					champ.name === selectedChampion.name ? updatedChampion : champ
+				)
+			);
 			localStorage.setItem("championConfig", JSON.stringify(state));
-		} catch {
+			setError(null); // Xóa lỗi nếu có
+		} catch (error) {
+			console.error("Lỗi khi lưu dữ liệu:", error);
 			setError("Lỗi khi lưu dữ liệu. Vui lòng thử lại.");
 		} finally {
+			setIsLoading(false);
 			setIsConfirmModalOpen(false);
 		}
 	}, [
