@@ -1163,7 +1163,7 @@ function App() {
 			{error && <ErrorMessage message={error} onClose={() => setError(null)} />}
 			<div id='Screen'>
 				<div className='CanhBao'>
-					Tui không biết FIX BUG đâu nên xin đừng phá!
+					Đăng ký ủng hộ kênh Evin LoR nha! Tui không biết FIX BUG đâu nên xin đừng phá :v
 				</div>
 				<div id='mainView'>
 					{isLoading && (
