@@ -6,6 +6,54 @@
 				"fullAbsolutePath": "http://dd.b.pvp.net/4_2_0/set6cde/vi_vn/img/cards/06RU026T3-full.png"
 			}
 		],
+		"regions": ["Bilgewater"],
+		"regionRefs": ["Bilgewater"],
+		"name": "Twisted Fate",
+		"defaultPowers": [
+			"Xiềng Xích Địa Ngục",
+			"Vũ Khí Tha Hóa",
+			"Xiềng Xích Địa Ngục II",
+			"Trang Bị Tận Răng",
+			"Dòng Chảy Năng Lượng",
+			"Darkin Thức Tỉnh"
+		],
+		"defaultRelicsSet1": [null, null, null],
+		"defaultRelicsSet2": [null, null, null],
+		"defaultRelicsSet3": [null, null, null],
+		"defaultRelicsSet4": [null, null, null],
+		"defaultRelicsSet5": [null, "Chi Tiêu Phòng Thủ", null],
+		"defaultRelicsSet6": [null, null, null],
+		"defaultAdventurePower": [
+			"Cơn Thịnh Nộ Của Rồng",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"defaultItems": [null, null, null, null, null, null, null, null, null],
+		"note": "",
+		"like": [
+			{
+				"set1": 1,
+				"set2": 1,
+				"set3": 0,
+				"set4": 0,
+				"set5": 0,
+				"set6": 0
+			}
+		]
+	},
+	{
+		"assets": [
+			{
+				"gameAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/02BW026.png?b4155",
+				"fullAbsolutePath": "https://wiki.leagueoflegends.com/en-us/images/thumb/02BW026T3-full.png/1920px-02BW026T3-full.png?86695"
+			}
+		],
 		"regions": ["Runeterra"],
 		"regionRefs": ["Runeterra"],
 		"name": "Aatrox",
