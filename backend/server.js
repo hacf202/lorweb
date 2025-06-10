@@ -28,7 +28,7 @@ const dynamoDBClient = new DynamoDBClient({
 const allowedOrigins = [
 	"http://localhost:3000",
 	"http://localhost:5173",
-	// "https://lorweb.vercel.app",
+	 "https://lorweb.vercel.app",
 	process.env.FRONTEND_URL || "*",
 ];
 app.use(
