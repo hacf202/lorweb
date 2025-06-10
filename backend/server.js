@@ -28,7 +28,7 @@ const dynamoDBClient = new DynamoDBClient({
 const allowedOrigins = [
 	"http://localhost:3000",
 	"http://localhost:5173",
-	"https://lorweb.vercel.app",
+	// "https://lorweb.vercel.app",
 	process.env.FRONTEND_URL || "*",
 ];
 app.use(
@@ -636,6 +636,11 @@ app.get("/api/health", (req, res) => {
 		timestamp: new Date().toISOString(),
 		port: port,
 	});
+});
+
+// New endpoint to keep server awake
+app.get("/api/ping", (req, res) => {
+	res.send("Server is awake");
 });
 
 // Endpoint để đẩy dữ liệu từ chamPOC.json lên DynamoDB
