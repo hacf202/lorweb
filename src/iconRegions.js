@@ -6,6 +6,12 @@ const iconRegionList = [
 		name: "Noxus",
 		nameRef: "Noxus",
 	},
+	  {
+      "abbreviation": "SP",
+      "iconAbsolutePath": "http://dd.b.pvp.net/6_8_0/core/vi_vn/img/regions/icon-spiritblossom.png",
+      "name": "Hoa Linh Lục Địa",
+      "nameRef": "SpiritBlossom"
+    },
 	{
 		abbreviation: "DE",
 		iconAbsolutePath:
@@ -79,3 +85,4 @@ const iconRegionList = [
 ];
 
 export default iconRegionList;
+
